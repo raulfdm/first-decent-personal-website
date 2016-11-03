@@ -1,0 +1,16 @@
+//Libs e fontes
+@import './libs/reset';
+//Mixins
+@import './helpers/_mixins.scss';
+@import './helpers/_variaveis.scss';
+
+//css Global
+@import '_geral';
+
+//Partials
+@import './partials/_home.scss'; 
+@import './partials/_menu.scss'; 
+@import './partials/_portifolio.scss'; 
+@import './partials/_rodape.scss'; 
+@import './partials/_skills.scss'; 
+@import './partials/_sobre.scss';  

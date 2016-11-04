@@ -2,6 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Kranky");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,17 +48,29 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  font-family: 'Dosis'; }
+
 main {
   display: flex;
   flex-wrap: wrap; }
   main section, main footer {
     width: 100%;
     margin: 1px 0;
-    padding: 1em 0;
-    min-height: 400px; }
+    padding: 1em 0; }
+  main section > h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 1.7em; }
 
 a:visited, a {
   color: inherit; }
+
+a {
+  text-decoration: none; }
 
 #menu {
   width: 100%;
@@ -78,9 +93,50 @@ a:visited, a {
     text-decoration: none; }
     #menu a span {
       font-size: .8em; }
+  #menu > .menu-nome {
+    font-family: 'Kranky'; }
 
 #portifolio .card {
-  border: 1px solid black; }
+  background-color: #fff;
+  border-radius: 2px;
+  margin: 0.5rem 2rem 1rem 2rem;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+  #portifolio .card img {
+    width: 100%; }
+  #portifolio .card .card-content {
+    padding: 0.8em 1em; }
+    #portifolio .card .card-content h3 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: .5em 0;
+      text-transform: uppercase; }
+      #portifolio .card .card-content h3 a {
+        text-decoration: none; }
 
-footer.page-footer {
-  margin-top: 0; }
+#rodape {
+  background-color: #2980b9;
+  display: flex;
+  flex-wrap: wrap;
+  color: #eee; }
+  #rodape .rodape-contatos {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 39px; }
+    #rodape .rodape-contatos .sociais ul li {
+      display: inline-block; }
+  #rodape .rodape-copyright {
+    text-align: center;
+    background-color: #084e7c;
+    align-self: flex-end;
+    width: 100%;
+    padding: 6px 0;
+    font-size: .8em; }
+    #rodape .rodape-copyright p {
+      display: inline-block;
+      height: 100%; }
+
+#habilidades {
+  background: #084e7c;
+  color: #fff; }

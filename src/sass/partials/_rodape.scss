@@ -1,3 +1,29 @@
-footer.page-footer{
-    margin-top: 0;
+#rodape {
+    background-color: #2980b9;
+    display: flex;
+    flex-wrap: wrap;
+    color: #eee;
+    .rodape-contatos {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        height: 39px;        
+        .sociais {
+            ul li {
+                display: inline-block;
+            }
+        }
+    }
+    .rodape-copyright {
+        text-align: center;
+        background-color: #084e7c;
+        align-self: flex-end;
+        width: 100%;
+        padding: 6px 0;
+        font-size: .8em;
+        p {
+            display: inline-block;
+            height: 100%;
+        }
+    }
 }

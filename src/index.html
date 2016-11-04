@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Raul F. de Melo</title>
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
 	<!--Menu-->
 	<nav id="menu">
-		<a href="#" id="menu-nome">Raul F. de Melo <span id="menu-profissao">Front-end Developer</span></a>
+		<a href="#" class="menu-nome">Raul F. de Melo <span id="menu-profissao">Front-end Developer</span></a>
 		<ul>
 			<li><a href="#home">Home</a></li>
 			<li><a href="#sobre">Sobre</a></li>
@@ -30,71 +31,116 @@
 		<!--Parallax2 - SOBRE-->
 		<section id="sobre">
 			<h2>Sobre</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quidem consequuntur eveniet, voluptates voluptatibus
-				pariatur est, expedita. Placeat dolore dolorum dicta doloribus sapiente voluptate a quos. Odio vero, autem quis!</p>
-			<p>Commodi cum est deleniti corrupti nostrum nisi, fugit itaque optio consectetur. Facilis eveniet, magnam beatae laboriosam
-				voluptate aliquam recusandae optio distinctio fugit amet ea hic asperiores quisquam sunt voluptatibus, voluptatem.</p>
+			<p></p>
 		</section>
 		<!--Parallax3 - Skills-->
-		<section id="skills">
-			<h2>Skills</h2>
-			<div class="skill">Git</div>
-			<div class="skill">Javascript</div>
-			<div class="skill">HTML5</div>
-			<div class="skill">CSS3</div>
-			<div class="skill">Sass</div>
-			<div class="skill">NPM Packages</div>
-			<div class="skill">Gulp</div>
-			<div class="skill">ReactJS</div>
-			<div class="skill">Photoshop</div>
-			<div class="skill"></div>
+		<section id="habilidades">
+			<h2>Habilidades</h2>
+			<div class="habilidade">
+				<h4 class="habilidade-titulo">Git</h4>
+				<div class="habilidade-dominio">
+					<svg xmlns="http://www.w3.org/2000/svg">
+						<circle cx="6" cy="6" r="6" fill="red" />
+					</svg>
+				</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">Javascript</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">HTML5</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">CSS3</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">Sass</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">NPM Packages</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">Gulp</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">ReactJS</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade">
+				<h4 class="habilidades-titulo">Photoshop</h4>
+				<div class="habilidades-percentual">30%</div>
+			</div>
+			<div class="habilidade"></div>
 		</section>
 		<!--Parallax4 - Portifólio-->
 		<section id="portifolio">
 			<h2>Portifólio</h2>
 			<div class="card">
-				<img src="img/controle-ponto-full.png" width="300" height="200" alt="Foto Aqui">
-				<div class="content">
-					<h3>Controle de Ponto</h3>
+				<div class="card-img">
+					<img src="img/controle-ponto-full.png" alt="Foto Aqui">
+				</div>
+				<div class="card-content">
+					<h3><a href="">Controle de Ponto <i class="fa fa-github" aria-hidden="true"></i></a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, adipisci nesciunt doloremque laudantium unde consequuntur
+						placeat possimus, cupiditate natus beatae.</p>
+				</div>
+			</div>
+			<div class="card portifolio-resume">
+				<div class="card-img">
+					<img src="img/resume-full.png" alt="Foto Aqui">
+				</div>
+				<div class="card-content">
+					<h3><a href="">Resume <i class="fa fa-github" aria-hidden="true"></i></a></h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, adipisci nesciunt doloremque laudantium unde consequuntur
 						placeat possimus, cupiditate natus beatae.</p>
 				</div>
 			</div>
 			<div class="card">
-				<img src="img/resume-full.png" width="300" height="200" alt="Foto Aqui">
-				<div class="content">
-					<h3>Resume</h3>
+				<div class="card-img">
+					<img src="img/gh-search-full.png" alt="Foto Aqui">
+				</div>
+				<div class="card-content">
+					<h3><a href="">Github Profile Search <i class="fa fa-github" aria-hidden="true"></i></a></h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, adipisci nesciunt doloremque laudantium unde consequuntur
 						placeat possimus, cupiditate natus beatae.</p>
 				</div>
 			</div>
 			<div class="card">
-				<img src="img/gh-search-full.png" width="300" height="200" alt="Foto Aqui">
-				<div class="content">
-					<h3>Github Profile Search</h3>
+				<div class="card-img">
+					<img src="img/algoritmo-full.png" alt="Foto Aqui">
+				</div>
+				<div class="card-content">
+					<h3><a href="">Algoritmo Sistemas Produtivos <i class="fa fa-github" aria-hidden="true"></i></a></h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, adipisci nesciunt doloremque laudantium unde consequuntur
 						placeat possimus, cupiditate natus beatae.</p>
 				</div>
 			</div>
-			<div class="card">
-				<img src="img/algoritmo-full.png"  width="300" height="200" alt="Foto Aqui">
-				<div class="content">
-					<h3>Algoritmo Sistemas Produtivos</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, adipisci nesciunt doloremque laudantium unde consequuntur
-						placeat possimus, cupiditate natus beatae.</p>
-				</div>
-			</div>			
 		</section>
 	</main>
 	<!--Rodapé-->
-	<footer id="rodape">
-		<section id="contatos">
-			<p>Entre em contato:</p>
-			<p><a href="mailto:melo.raulf@gmail.com">melo.raulf@gmail.com</a></p>
-			<p><a href="tel:16991749537">(16) 99174-9537</a></p>
+	<footer id="rodape">		
+		<section class="rodape-contatos">			
+			<div class="gerais">
+				<ul>
+					<li><a href="mailto:melo.raulf@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> melo.raulf@gmail.com</a></li>
+					<li><a href="tel:16991749537"><i class="fa fa-mobile" aria-hidden="true"></i>(16) 9.9174-9537</a></li>
+				</ul>
+			</div>
+			<div class="sociais">
+				<ul>
+					<li><a href="#"><i class="fa fa-github-alt" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
 		</section>
-		<section id="rodape-copyright">
-			Developed by Raul F. de Melo
+		<section class="rodape-copyright">
+			<p>Developed by Raul F. de Melo</p>
 		</section>
 	</footer>
 </body>

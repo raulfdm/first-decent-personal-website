@@ -2,9 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Dosis");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-@import url("https://fonts.googleapis.com/css?family=Kranky");
+@import url("https://fonts.googleapis.com/css?family=Coming+Soon|Open+Sans|Permanent+Marker|Walter+Turncoat");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,22 +47,21 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: 'Dosis'; }
+  font-family: 'Coming Soon', cursive; }
 
 main {
   display: flex;
   flex-wrap: wrap; }
   main section, main footer {
-    width: 100%;
-    margin: 1px 0;
-    padding: 1em 0; }
-  main section > h2 {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.8em;
-    line-height: 1.7em; }
+    width: 100%; }
+  main section {
+    padding: 1em; }
+    main section > h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.8em;
+      line-height: 1.7em; }
 
 a:visited, a {
   color: inherit; }
@@ -72,65 +69,164 @@ a:visited, a {
 a {
   text-decoration: none; }
 
+.hide {
+  display: none; }
+
+.active {
+  color: hotpink !important; }
+  .active:before {
+    content: "{ "; }
+  .active:after {
+    content: " }"; }
+
+#home {
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  padding: 0; }
+  #home .over {
+    padding-top: 5em;
+    padding-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+    background-color: rgba(41, 128, 185, 0.8); }
+    #home .over .img {
+      width: 50%; }
+      #home .over .img img {
+        border-radius: 50%;
+        max-width: 100%;
+        height: auto;
+        display: block; }
+    #home .over .infos {
+      margin-top: 2em;
+      text-align: center;
+      width: 100%;
+      font-family: 'Coming Soon', cursive;
+      font-weight: bold; }
+      #home .over .infos .home-nome {
+        font-size: 2.5em; }
+      #home .over .infos .home-cargo {
+        font-style: italic; }
+
 #menu {
   width: 100%;
-  background-color: #2980b9;
+  position: fixed;
+  background-color: #272727;
+  border-top: 2px solid #2980b9;
   color: #fff;
+  font-weight: bold;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 999999; }
   #menu ul {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1em; }
   #menu ul li {
-    display: inline-block; }
-  #menu a {
+    display: inline-block;
+    margin: 0 .6em; }
+  #menu .menu-nome {
+    width: 100%;
     margin: 1em 0;
     text-decoration: none; }
-    #menu a span {
+    #menu .menu-nome span {
       font-size: .8em; }
   #menu > .menu-nome {
     font-family: 'Kranky'; }
 
-#portifolio .card {
-  background-color: #fff;
-  border-radius: 2px;
-  margin: 0.5rem 2rem 1rem 2rem;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
-  #portifolio .card img {
+#portifolio {
+  display: flex;
+  flex-wrap: wrap; }
+  #portifolio h2 {
     width: 100%; }
-  #portifolio .card .card-content {
-    padding: 0.8em 1em; }
-    #portifolio .card .card-content h3 {
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      margin: .5em 0;
-      text-transform: uppercase; }
-      #portifolio .card .card-content h3 a {
-        text-decoration: none; }
+  #portifolio .card {
+    min-width: 256px;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 2px;
+    margin: 0.5rem 1rem 1rem 1rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+    #portifolio .card .card-img {
+      /*max-width: 320px;
+            max-height: 167px;*/
+      -webkit-text-size-adjust: 100%;
+      position: relative; }
+      #portifolio .card .card-img img {
+        transition: all .2s;
+        display: block;
+        border-radius: 2px 2px 0 0;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        filter: grayscale(1) blur(1px); }
+        #portifolio .card .card-img img:focus, #portifolio .card .card-img img:hover {
+          filter: grayscale(0) blur(0); }
+    #portifolio .card .card-content {
+      padding: 0.8em 1em;
+      min-height: 125px; }
+      #portifolio .card .card-content h3 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin: .5em 0;
+        text-transform: uppercase; }
+        #portifolio .card .card-content h3 a {
+          text-decoration: none; }
+  #portifolio .card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    max-height: 56px;
+    height: 2em;
+    padding: .4375em 0.6em 1em; }
+    #portifolio .card-footer .link-projeto,
+    #portifolio .card-footer .data-atualizacao {
+      width: 100%; }
+    #portifolio .card-footer .link-projeto {
+      text-decoration: underline;
+      text-transform: capitalize; }
+      #portifolio .card-footer .link-projeto i {
+        margin-left: 4px;
+        font-size: .8em; }
+    #portifolio .card-footer .data-atualizacao {
+      margin-top: 10px;
+      font-size: .8em; }
 
 #rodape {
   background-color: #2980b9;
   display: flex;
-  flex-wrap: wrap;
-  color: #eee; }
+  flex-direction: column;
+  color: #eee;
+  height: 100px;
+  padding-top: 1em; }
+  #rodape h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center; }
   #rodape .rodape-contatos {
+    flex-grow: 3;
     display: flex;
-    width: 100%;
-    justify-content: space-around;
-    height: 39px; }
-    #rodape .rodape-contatos .sociais ul li {
-      display: inline-block; }
+    align-items: center;
+    text-align: center; }
+    #rodape .rodape-contatos ul {
+      width: 100%; }
+    #rodape .rodape-contatos ul li {
+      display: inline-block;
+      margin: 0 .5em; }
+      #rodape .rodape-contatos ul li i {
+        font-size: 2em; }
   #rodape .rodape-copyright {
+    width: 100%;
     text-align: center;
     background-color: #084e7c;
     align-self: flex-end;
-    width: 100%;
     padding: 6px 0;
     font-size: .8em; }
     #rodape .rodape-copyright p {
@@ -139,4 +235,23 @@ a {
 
 #habilidades {
   background: #084e7c;
-  color: #fff; }
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-right: 3em;
+  padding-left: 3em;
+  min-height: 300px; }
+  #habilidades h2 {
+    width: 100%; }
+  #habilidades .habilidade {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    #habilidades .habilidade .habilidade-dominio ul li {
+      display: inline-block; }
+    #habilidades .habilidade .habilidade-dominio li i {
+      font-size: 1.2em; }
+    #habilidades .habilidade .habilidade-titulo,
+    #habilidades .habilidade .habilidade-dominio {
+      display: inline-block; }

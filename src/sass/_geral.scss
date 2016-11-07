@@ -1,17 +1,15 @@
 body{
-    font-family: 'Dosis';
+    font-family: 'Coming Soon', cursive;    
 }
 main {
     display: flex;
     flex-wrap: wrap;    
     section,footer {
-        width: 100%;
-        margin: 1px 0;
-        padding: 1em 0;                        
+        width: 100%;                                      
     }
     section{
-        &>h2{
-            font-family: 'Montserrat', sans-serif;
+        padding: 1em;
+        &>h2{            
             text-transform: uppercase;
             font-weight: bold;
             text-align: center;
@@ -27,4 +25,20 @@ a:visited,a{
 }
 a{
     text-decoration: none;
+}
+
+//Estilos Gerais
+
+.hide{
+    display: none;
+}
+
+.active{
+    color: hotpink !important;
+    &:before{
+        content: ('{ ');
+    }
+    &:after{
+        content: (' }');
+    }
 }

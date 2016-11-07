@@ -1,24 +1,36 @@
 #rodape {
     background-color: #2980b9;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;    
     color: #eee;
+    height: 100px;
+    padding-top: 1em;
+    h2{
+        font-size: 1.2em;
+        font-weight: bold;
+        text-align: center;
+    }
     .rodape-contatos {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        height: 39px;        
-        .sociais {
-            ul li {
+        flex-grow: 3;
+        display: flex; 
+        align-items: center;        
+        text-align: center;         
+        ul{            
+            width: 100%;
+        }                              
+        ul li {                
                 display: inline-block;
+                margin: 0 .5em;
+                i{
+                    font-size: 2em;
+                }
             }
-        }
     }
     .rodape-copyright {
+        width: 100%;
         text-align: center;
         background-color: #084e7c;
-        align-self: flex-end;
-        width: 100%;
+        align-self: flex-end;        
         padding: 6px 0;
         font-size: .8em;
         p {

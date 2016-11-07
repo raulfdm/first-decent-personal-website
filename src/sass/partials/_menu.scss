@@ -1,29 +1,33 @@
-#menu {    
+#menu {
     width: 100%;
-    background-color: #2980b9;
+    position: fixed;
+    background-color: $preto-claro;
+    border-top: 2px solid #2980b9;
     color: #fff;
+    font-weight: bold;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;   
-    ul{
+    justify-content: center;
+    z-index: 999999;
+    ul {
         width: 100%;
         display: flex;
-        justify-content: space-between;
-        padding:1em;
+        justify-content: center;
+        padding: 1em;
     }
-    ul li{
+    ul li {
         display: inline-block;
+        margin: 0 .6em;
     }
-    a{
+    .menu-nome {
+        width: 100%;
         margin: 1em 0;
         text-decoration: none;
-        span{
+        span {
             font-size: .8em;
         }
     }
-    &>.menu-nome{
+    &>.menu-nome {
         font-family: 'Kranky';
     }
 }

@@ -1,4 +1,30 @@
-#habilidades{
-    background: #084e7c;
+#habilidades {
+    background: #084e7c;    
     color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-right: 3em;
+    padding-left: 3em;
+    min-height: 300px;
+    h2{
+        width: 100%;
+    }    
+    .habilidade {        
+        min-width: 100%;    
+        display: flex;  
+        justify-content: space-between;
+        .habilidade-dominio {
+            ul li{
+                display: inline-block;
+            }
+            li i{
+                font-size: 1.2em;
+            }
+        }
+        .habilidade-titulo,
+        .habilidade-dominio {
+            display: inline-block;
+        }
+    }
 }

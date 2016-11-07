@@ -1,0 +1,38 @@
+#home {
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    padding: 0;    
+    .over {        
+        padding-top: 5em;
+        padding-bottom: 2em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: #fff;
+        //aqui
+        background-color: rgba(41, 128, 185, .8);
+    
+    .img {
+        width: 50%;
+        img {
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    .infos {
+        margin-top: 2em;
+        text-align: center;
+        width: 100%;
+        font-family: 'Coming Soon', cursive;
+        font-weight: bold;
+        .home-nome {
+            font-size: 2.5em;
+        }
+        .home-cargo {
+            font-style: italic;
+        }
+    }
+    }
+}

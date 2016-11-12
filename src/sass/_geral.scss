@@ -1,44 +1,59 @@
-body{
-    font-family: 'Coming Soon', cursive;    
+body {
+    font-family: 'Open Sans', sans-serif;
 }
+
 main {
     display: flex;
-    flex-wrap: wrap;    
-    section,footer {
-        width: 100%;                                      
+    flex-wrap: wrap;
+    section,
+    footer {
+        width: 100%;
     }
-    section{
-        padding: 1em;
-        &>h2{            
+    section {
+        padding: 1rem;
+        &>h2 {
             text-transform: uppercase;
             font-weight: bold;
             text-align: center;
-            font-size: 1.8em;
-            line-height: 1.7em;
+            font-size: 1.8rem;
+            line-height: 1.7rem;
         }
     }
-    
 }
 
-a:visited,a{
+a:visited,
+a {
     color: inherit;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 //Estilos Gerais
-
-.hide{
+.hide {
     display: none;
 }
 
-.active{
-    color: hotpink !important;
-    &:before{
+.active {
+    color: $azul-default !important;
+    &:before {
         content: ('{ ');
     }
-    &:after{
+    &:after {
         content: (' }');
     }
+}
+
+.toggle-menu.btn-abrir-menu {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    color: #fff !important;
+    font-weight: bold;
+    z-index: 999999;
+    background-color: $azul-default;
+    box-sizing: border-box;
+    padding: .7rem;
+    font-size: 1.5rem !important;
 }

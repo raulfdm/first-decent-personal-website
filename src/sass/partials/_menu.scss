@@ -1,33 +1,43 @@
 #menu {
-    width: 100%;
+    width: 100%;    
     position: fixed;
     background-color: $preto-claro;
     border-top: 2px solid #2980b9;
-    color: #fff;
-    font-weight: bold;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    z-index: 999999;
     ul {
+        color: #fff;
+        font-weight: bold;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 1em;
+        flex-direction: column;
+        display: flex;    
+        text-align: center;            
     }
     ul li {
-        display: inline-block;
-        margin: 0 .6em;
+        width: 80%;
+        
+        display: inline-block;        
+        margin: 1rem auto;
+        font-size: 1.5rem;
+        &:not(:first-child){
+            border-bottom: 1px solid white;
+        }
+        
+        a{
+            display: block;
+            margin-bottom: .625rem;
+        }        
     }
     .menu-nome {
         width: 100%;
-        margin: 1em 0;
+        margin: 1rem 0;
         text-decoration: none;
         span {
-            font-size: .8em;
+            font-size: .8rem;
         }
-    }
-    &>.menu-nome {
-        font-family: 'Kranky';
-    }
+    }    
+}
+
+#menu {
+    height: 100%;
+    position: absolute;
+    transform: translateX(-450px);
 }

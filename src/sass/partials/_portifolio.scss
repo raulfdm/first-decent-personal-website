@@ -35,13 +35,13 @@
             
         }
         .card-content {
-            padding: 0.8em 1em;
+            padding: 0.8rem 1rem;
             min-height: 125px;
             h3 {
                 text-align: center;
                 font-size: 18px;
                 font-weight: bold;
-                margin: .5em 0;
+                margin: .5rem 0;
                 text-transform: uppercase;
                 a {
                     text-decoration: none;
@@ -55,8 +55,8 @@
         text-align: center;
         border-top: 1px solid $cinza-card;
         max-height: 56px;
-        height: 2em;
-        padding: .4375em 0.6em 1em;
+        height: 2rem;
+        padding: .4375rem 0.6rem 1rem;
         .link-projeto,
         .data-atualizacao {
             width: 100%;
@@ -66,12 +66,12 @@
             text-transform: capitalize;
             i {
                 margin-left: 4px;
-                font-size: .8em;
+                font-size: .8rem;
             }
         }
         .data-atualizacao {
             margin-top: 10px;
-            font-size: .8em;
+            font-size: .8rem;
         }
     }
 }

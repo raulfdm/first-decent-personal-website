@@ -4,9 +4,9 @@
     flex-direction: column;    
     color: #eee;
     height: 100px;
-    padding-top: 1em;
+    padding-top: 1rem;
     h2{
-        font-size: 1.2em;
+        font-size: 1.2rem;
         font-weight: bold;
         text-align: center;
     }
@@ -20,9 +20,9 @@
         }                              
         ul li {                
                 display: inline-block;
-                margin: 0 .5em;
+                margin: 0 .5rem;
                 i{
-                    font-size: 2em;
+                    font-size: 2rem;
                 }
             }
     }
@@ -32,7 +32,7 @@
         background-color: #084e7c;
         align-self: flex-end;        
         padding: 6px 0;
-        font-size: .8em;
+        font-size: .8rem;
         p {
             display: inline-block;
             height: 100%;

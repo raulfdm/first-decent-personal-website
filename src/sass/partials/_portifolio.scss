@@ -1,6 +1,7 @@
 #portifolio {
     display: flex;
     flex-wrap: wrap;
+    @include white-bg;
     h2 {
         width: 100%;
     }

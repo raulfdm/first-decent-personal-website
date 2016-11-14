@@ -1,3 +1,9 @@
 $preto-claro: rgb(39,39,39);
 $cinza-card: rgba(160,160,160,0.2);
 $azul-default: rgba(41, 128, 185, .8);
+
+//Media-queries
+$md-sm-md:"(min-width: 450px)";
+$md-md:"(min-width: 620px)";
+$mq-md-lg: "(min-width: 860px)";
+$mq-lg: "(min-width: 1200px)";

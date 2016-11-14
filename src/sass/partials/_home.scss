@@ -12,10 +12,11 @@
         //aqui
         background-color: $azul-default;
         .img {
-            width: 50%;
+            width: 50%;                        
             img {
+                margin: 0 auto;
                 border-radius: 50%;
-                max-width: 100%;
+                max-width: 18.125rem;
                 height: auto;
                 display: block;
             }
@@ -25,10 +26,10 @@
             text-align: center;
             width: 100%;            
             font-weight: bold;
-            .home-nome {
+            .infos-nome {
                 font-size: 2.5rem;
             }
-            .home-cargo {
+            .infos-cargo {
                 font-style: italic;
             }
         }

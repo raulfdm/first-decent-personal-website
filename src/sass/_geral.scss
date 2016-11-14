@@ -36,17 +36,3 @@ a {
 .hide {
     display: none;
 }
-
-
-.toggle-menu {
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    color: #fff !important;
-    font-weight: bold;
-    z-index: 999999;
-    background-color: $azul-default;
-    box-sizing: border-box;
-    padding: .7rem;
-    font-size: 1.5rem !important;
-}

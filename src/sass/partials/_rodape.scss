@@ -4,11 +4,12 @@
     flex-direction: column;    
     color: #eee;
     height: 100px;
-    padding-top: 1rem;
+    padding-top: .5rem;
     h2{
         font-size: 1.2rem;
         font-weight: bold;
         text-align: center;
+        margin: 0;
     }
     .rodape-contatos {
         flex-grow: 3;
@@ -17,6 +18,7 @@
         text-align: center;         
         ul{            
             width: 100%;
+            padding: 0;
         }                              
         ul li {                
                 display: inline-block;
@@ -36,6 +38,7 @@
         p {
             display: inline-block;
             height: 100%;
+            margin: 0;
         }
     }
 }

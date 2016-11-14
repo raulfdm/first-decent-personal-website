@@ -1,3 +1,7 @@
 @mixin white-bg{
     background-color: #fff;
 }
+
+@mixin bg-opacity($cor, $nivelTransparencia){
+    background-color: rgba($cor, $nivelTransparencia)
+}

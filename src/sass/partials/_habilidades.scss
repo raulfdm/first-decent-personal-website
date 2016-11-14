@@ -1,31 +1,76 @@
 #habilidades {
-    background: #084e7c;    
+    background: #084e7c;
     color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-right: 3rem;
-    padding-left: 3rem;
-    min-height: 300px;
-    h2{
-        width: 100%;
-    }    
-    .habilidade {        
-        min-width: 100%;   
-        height: 2.125rem;  
-        display: flex;  
-        justify-content: space-between;
-        .habilidade-dominio {
-            ul li{
-                display: inline-block;
-            }
-            li i{
-                font-size: 1.2rem;
-            }
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3rem 3rem;
+    min-height: 18.75rem;
+    @media #{$md-md} {
+        padding-left: 1rem;
+        padding-right: 1rem;        
+    }
+    .habilidades-content{
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 50rem;
+
+        @media #{$mq-lg}{            
+            max-width: 974px;
+            justify-content: flex-start;            
         }
-        .habilidade-titulo,
-        .habilidade-dominio {
-            display: inline-block;
+    }
+    h2 {
+        width: 100%;
+    }
+    .categoria {
+        width: 100%;
+        margin: 1.5rem 0;
+        max-width: 16.25rem;
+        min-width: 15rem;
+        @media #{$md-md} {         
+         margin-left: 2rem;
+         margin-right: 2rem;
+        }
+        @media #{$mq-md-lg}{
+            
+        }
+        .categoria-titulo {
+            margin-bottom: 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-style: italic;
+            font-weight: normal;
+        }
+        .habilidade {
+            min-width: 100%;
+            height: 2.125rem;
+            display: flex;
+            justify-content: space-between;
+            .habilidade-dominio {
+                ul {
+                    margin: 0;
+                    align-self: center;
+                    height: 100%;
+                    padding: 0;
+                }
+                ul li {
+                    display: inline-block;
+                }
+                li i {
+                    font-size: 1.2rem;
+                }
+            }
+            .habilidade-titulo {
+                margin: 0;
+            }
+            .habilidade-titulo,
+            .habilidade-dominio {
+                display: inline-block;
+                align-self: center;
+            }
         }
     }
 }

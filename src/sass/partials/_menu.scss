@@ -1,29 +1,91 @@
-#menu {    
-    background-color: $preto-claro;
-    max-height: 100vh;    
+#menu {
+    position: fixed;
+    @include bg-opacity($preto-claro,.9);
+    max-height: 100vh;
+    width: 200px;
+    @media screen and (min-width: 780px) {
+        max-height: 100%;
+        width: 100%;
+        top: 0;
+    }
     ul {
-        color: #fff;        
-        width: 100%;
+        display: flex;
         flex-direction: column;
-        display: flex;        
         padding: 0;
-    }
-    ul li {
-    display: inline-block;
-    margin: 0 5px;
-    line-height: 3rem;
-    font-size: 1.5rem;
-    margin-left: 1rem;  
-        a {
-            display: block;            
-        }
-    }
-    .menu-nome {
+        margin: .5rem 0;
+        color: #fff;
         width: 100%;
-        margin: 1rem 0;
-        text-decoration: none;
-        span {
-            font-size: .8rem;
+        @media screen and (min-width: 780px) {
+            flex-direction: row;
+            justify-content: center;
         }
+        li {
+            display: inline-block;
+            margin: 0 5px;
+            line-height: 3rem;
+            font-size: 1.5rem;
+            width: 100%;
+            @media screen and (min-width: 780px) {
+                width: initial;
+                margin:0 1rem;
+            }
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
+.toggle-menu {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    color: #fff !important;
+    font-weight: bold;
+    z-index: 999999;
+    background-color: $azul-default;
+    box-sizing: border-box;
+    padding: .7rem;
+    font-size: 1.5rem !important;
+}
+
+.slideout-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+}
+
+.slideout-panel {
+    position: relative;
+    z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+    display: block;
+}
+
+@media screen and (min-width: 780px) {
+    .slideout-panel {
+        margin-left: 0;
+        position: static;
+    }
+    .slideout-menu {
+        display: block;
+        bottom: initial;
+    }
+    .toggle-menu {
+        display: none;
     }
 }

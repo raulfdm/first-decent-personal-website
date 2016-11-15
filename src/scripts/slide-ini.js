@@ -1,8 +1,8 @@
 let slideout = new Slideout({
     'panel': document.getElementById('content'),
     'menu': document.getElementById('menu'),
-    'duration': 200,
-    'padding': 200,
+    'fx': 'ease-in-out',    
+    'padding': 160,
     'tolerance': 70
 });
 
@@ -15,10 +15,13 @@ toggleMenu.addEventListener('click', function(e) {
 let liMenuList = [].slice.call(document.querySelectorAll('#menu ul li'));
 
 liMenuList.forEach(li => {
-    li.addEventListener('click', function(event) {
-        //currentStyle = IE
+    li.addEventListener('click', function(event) {        
+         smoothScroll.init({
+           'selectorHeader': '#menu' 
+        });
         let none = getComputedStyle(toggleMenu).getPropertyValue('display') || toggleMenu.currentStyle.display;
         if(none !== 'none'){
+            smoothScroll.init()
             slideout.toggle();
         }
         

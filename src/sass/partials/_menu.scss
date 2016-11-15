@@ -1,8 +1,7 @@
 #menu {
-    position: fixed;
-    @include bg-opacity($preto-claro,.9);
-    max-height: 100vh;
-    width: 200px;
+    @include bg-opacity(#fff, 1);
+    z-index: 1;
+    // max-height: 100vh;    
     @media screen and (min-width: 780px) {
         max-height: 100%;
         width: 100%;
@@ -11,26 +10,72 @@
     ul {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         padding: 0;
-        margin: .5rem 0;
-        color: #fff;
+        margin: 0;
+        color: $preto-claro;
         width: 100%;
         @media screen and (min-width: 780px) {
             flex-direction: row;
             justify-content: center;
         }
         li {
-            display: inline-block;
-            margin: 0 5px;
-            line-height: 3rem;
-            font-size: 1.5rem;
+            display: flex;            
+            justify-content: center;
+            margin: 0;
             width: 100%;
+            text-align: center;            
+            transition: all .1s;
+            &:hover {
+                background: rgba($preto-claro, .8);
+                color: #fff;
+                .fa {
+                    border: 1px solid #fff;
+                }
+            }
             @media screen and (min-width: 780px) {
-                width: initial;
-                margin:0 1rem;
+                justify-content: flex-start;
+                flex-direction: row;
+                justify-content: center;                
+                padding: 0;
             }
             a {
-                display: block;
+                //flex
+                display: flex;
+                align-items: baseline;
+                flex-direction: column;
+                justify-content: center;
+                line-height: normal;
+                margin-top: .3125rem;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 1rem 0;
+                width: 100%;
+                @media screen and (min-width: 780px) {
+                    flex-direction: row;
+                    padding: .5rem 1rem;
+                }
+                .fa {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2rem;
+                    border: 1px solid $preto-claro;
+                    border-radius: 50%;
+                    padding: .5rem;
+                    align-self: center;
+                    width: 2rem;
+                    height: 2rem;
+                    @media screen and (min-width: 780px) {                        
+                        font-size: 1rem;
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 1rem;
+                    }
+                }
+                span {
+                    align-self: center;
+                }
             }
         }
     }
@@ -56,6 +101,7 @@
     bottom: 0;
     right: 0;
     z-index: 0;
+    width: 160px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     display: none;

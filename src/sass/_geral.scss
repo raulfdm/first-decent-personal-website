@@ -5,24 +5,6 @@ body {
     color: $preto-claro;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    footer{
-        width: 100vw;
-    }
-    section {
-        padding: 1rem;
-        width: 100%;    
-        &>h2 {
-            text-transform: uppercase;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.8rem;
-            line-height: 1.7rem;
-        }
-    }
-}
 
 a:visited,
 a {

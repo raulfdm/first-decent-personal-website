@@ -10,7 +10,7 @@
         justify-content: center;
         color: #fff;
         //aqui
-        background-color: $azul-default;
+        @include bg-opacity($azul1,.8)
         .img {                                  
             img {
                 margin: 0 auto;

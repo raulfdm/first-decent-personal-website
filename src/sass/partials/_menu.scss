@@ -1,7 +1,7 @@
 #menu {
-    @include bg-opacity(#fff, 1);
-    z-index: 1;
-    // max-height: 100vh;    
+    @include bg-opacity(#fff, 1);    
+    @include shadow3;
+    z-index: 1;     
     @media screen and (min-width: 780px) {
         max-height: 100%;
         width: 100%;
@@ -12,8 +12,7 @@
         flex-direction: column;
         justify-content: space-around;
         padding: 0;
-        margin: 0;
-        color: $preto-claro;
+        margin: 0;        
         width: 100%;
         @media screen and (min-width: 780px) {
             flex-direction: row;
@@ -27,7 +26,7 @@
             text-align: center;            
             transition: all .1s;
             &:hover {
-                background: rgba($preto-claro, .8);
+                background: $azul4;
                 color: #fff;
                 .fa {
                     border: 1px solid #fff;
@@ -88,7 +87,7 @@
     color: #fff !important;
     font-weight: bold;
     z-index: 999999;
-    background-color: $azul-default;
+    background-color: $azul1;
     box-sizing: border-box;
     padding: .7rem;
     font-size: 1.5rem !important;

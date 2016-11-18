@@ -1,10 +1,15 @@
 #rodape {
-    background-color: #2980b9;
+    background-color: $azul2;
     display: flex;
     flex-direction: column;
-    color: #eee;    
+    color: #eee;
     padding-top: .5rem;
     font-size: 0;
+    width: 100vw;
+    height: 8rem;
+    @media screen and (min-width: 780px) {
+        height: 13rem;
+    }
     h2 {
         font-size: 1.2rem;
         font-weight: bold;
@@ -12,26 +17,29 @@
         margin: 0 auto;
         width: auto;
     }
-    .rodape-contatos {        
+    .rodape-contatos {
         display: flex;
         align-items: center;
         text-align: center;
         margin: 0 auto;
         width: auto;
+        flex-grow: 2;
         ul {
             width: 100%;
-            padding: 0;
-            height: 60px;
+            padding: 0;            
             display: flex;
             align-items: center;
             li {
                 display: inline-block;
                 margin: 0 .5rem;
                 i {
+                    @media screen and (min-width: 780px) {
+                        font-size: 4rem;
+                    }
                     font-size: 3rem;
                     transition: all .1s;
-                    &:hover{
-                        font-size:4rem;
+                    &:hover {
+                        font-size: 5rem;                        
                     }
                 }
             }
@@ -40,7 +48,7 @@
     .rodape-copyright {
         width: 100%;
         text-align: center;
-        background-color: #084e7c;
+        background-color: $azul3;
         align-self: flex-end;
         padding: 6px 0;
         font-size: .8rem;

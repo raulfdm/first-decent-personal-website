@@ -1,5 +1,7 @@
-#sobre{
+#sobre {
     @include white-bg;
-    max-width: 50rem;
-    margin: 0 auto;
+    @media screen and (min-width: 780px) {
+        padding-right: 7.5rem !important;
+        padding-left: 7.5rem !important;
+    }
 }

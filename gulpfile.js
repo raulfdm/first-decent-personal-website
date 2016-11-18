@@ -45,7 +45,7 @@ gulp.task('server', function () {
 
     browser.init({
         server: {
-            baseDir: 'dist/'
+            baseDir: 'src/'
         }
     });
 

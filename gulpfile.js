@@ -3,21 +3,28 @@ const gulp = require('gulp'),
     browser = require('browser-sync'),
     usemin = require('gulp-usemin'),
     cssmin = require('gulp-cssmin'),
+    imagemin = require('gulp-imagemin'),            
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     ghPages = require('gulp-gh-pages'),
     clean = require('gulp-clean');
 
 
-gulp.task('build',['clean'],function(){
-    gulp.start('sass','usemin','copyFiles');
+gulp.task('build', ['clean'], function() {
+    gulp.start('sass', 'usemin', 'copyFiles', 'imagemin');
 })
 
-gulp.task('usemin',function(){
+gulp.task('imagemin', function() {
+    gulp.src('src/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('usemin', function() {
     return gulp.src('src/**/*.html')
         .pipe(usemin({
-           // 'js': [uglify],
-            'css': [autoprefixer,cssmin]
+            // 'js': [uglify],
+            'css': [autoprefixer, cssmin]
         }))
         .pipe(gulp.dest('dist/'))
 });
@@ -33,7 +40,7 @@ gulp.task('copyFiles', function() {
         .pipe(gulp.dest('dist/img/'));
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
 
     //Index.html
     return gulp.src('src/sass/index.scss')
@@ -41,7 +48,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('src/css/'));
 });
 
-gulp.task('server', function () {
+gulp.task('server', function() {
 
     browser.init({
         server: {
@@ -59,3 +66,15 @@ gulp.task('deploy', function() {
         .pipe(ghPages());
 });
 
+gulp.task('server-dist', function() {
+
+    browser.init({
+        server: {
+            baseDir: 'dist/'
+        }
+    });
+
+    //Change Listeners
+    gulp.watch('dist/sass/**/*.scss', ['sass']);
+    gulp.watch('dist/**/*.*').on('change', browser.reload);
+});

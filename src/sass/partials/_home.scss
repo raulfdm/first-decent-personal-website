@@ -1,5 +1,5 @@
 #home {
-    background-image: url('../img/background.png');
+    background-image: url('../../img/background.png');
     background-repeat: no-repeat;
     padding: 0;
     .over {
@@ -10,7 +10,7 @@
         justify-content: center;
         color: #fff;
         //aqui
-        @include bg-opacity($azul1,.8)
+        @include bg-opacity($azul1,.8);
         .img {                                  
             img {
                 margin: 0 auto;

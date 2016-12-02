@@ -1,9 +1,11 @@
 const gulp = require('gulp'),
     sass = require('gulp-sass'),
-    browser = require('browser-sync'),
+    babel = require('gulp-babel'),
+    browser = require('browser-sync'),    
     usemin = require('gulp-usemin'),
     cssmin = require('gulp-cssmin'),
-    imagemin = require('gulp-imagemin'),            
+    imagemin = require('gulp-imagemin'),
+    htmlmin = require('gulp-htmlmin'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     ghPages = require('gulp-gh-pages'),
@@ -11,11 +13,11 @@ const gulp = require('gulp'),
 
 
 gulp.task('build', ['clean'], function() {
-    gulp.start('sass', 'usemin', 'copyFiles', 'imagemin');
+    gulp.start('sass', 'imagemin', 'usemin');
 })
 
 gulp.task('imagemin', function() {
-    gulp.src('src/img/**/*')
+    return gulp.src('src/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'));
 });
@@ -23,27 +25,30 @@ gulp.task('imagemin', function() {
 gulp.task('usemin', function() {
     return gulp.src('src/**/*.html')
         .pipe(usemin({
-            // 'js': [uglify],
+            'html': [htmlmin({
+                collapseWhitespace: true,
+                removeComments: true
+            })],
+            'js': [/*babel({
+                presets: ['es2015']
+            }), 
+            uglify*/],
+            'jsAttributes': {
+                async: true
+            },
             'css': [autoprefixer, cssmin]
         }))
         .pipe(gulp.dest('dist/'))
 });
+
 
 gulp.task('clean', function() {
     return gulp.src('dist/')
         .pipe(clean());
 });
 
-//Copia os outros arquivos arquivos
-gulp.task('copyFiles', function() {
-    gulp.src('src/img/**/*')
-        .pipe(gulp.dest('dist/img/'));
-});
-
 gulp.task('sass', function() {
-
-    //Index.html
-    return gulp.src('src/sass/index.scss')
+    gulp.src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('src/css/'));
 });

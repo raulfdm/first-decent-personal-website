@@ -62,6 +62,7 @@
             }
             .habilidade-titulo {
                 margin: 0;
+                font-size: 0.9rem
             }
             .habilidade-titulo,
             .habilidade-dominio {
@@ -71,9 +72,6 @@
         }
     }
     .ranking {
-        .habilidade-titulo {
-            font-size: .8rem;
-        }
         .tooltip {
             border: 1px solid #fff;
             display: inline-block;

@@ -1,25 +1,24 @@
 #habilidades {
     background: $azul4;
     color: #fff;
-    display: flex;    
+    display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 3rem 3rem;
     min-height: 18.75rem;
     @media #{$md-md} {
         padding-left: 1rem;
-        padding-right: 1rem;        
+        padding-right: 1rem;
     }
-    .habilidades-content{
+    .habilidades-content {
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         max-width: 50rem;
-
-        @media #{$mq-lg}{            
+        @media #{$mq-lg} {
             max-width: 974px;
-            justify-content: flex-start;            
+            justify-content: flex-start;
         }
     }
     h2 {
@@ -30,13 +29,11 @@
         margin: .5rem 0;
         max-width: 16.25rem;
         min-width: 15rem;
-        @media #{$md-md} {         
-         margin-left: 2rem;
-         margin-right: 2rem;
+        @media #{$md-md} {
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
-        @media #{$mq-md-lg}{
-            
-        }
+        @media #{$mq-md-lg} {}
         .categoria-titulo {
             margin-bottom: 1rem;
             text-align: center;
@@ -71,6 +68,53 @@
                 display: inline-block;
                 align-self: center;
             }
+        }
+    }
+    .ranking {
+        .habilidade-titulo {
+            font-size: .8rem;
+        }
+        .tooltip {
+            border: 1px solid #fff;
+            display: inline-block;
+            text-align: center;
+            padding: .2rem;
+            margin-left: .5rem;
+            border-radius: 1rem;
+            width: .8rem;
+            height: .8rem;
+            position: relative;
+            &:hover {
+                background: white;
+                color: $azul4;
+            }
+            &:hover:after {
+                background: $azul3;
+                border-radius: .5rem;
+                bottom: 1.7rem;
+                color: #fff;
+                content: attr(title);
+                display: block;
+                left: -5rem;
+                padding: .3em 1em;
+                position: absolute;
+                text-shadow: 0 1px 0 #000;
+                z-index: 98;
+                width: 14.375rem;
+            }
+            &:hover:before {
+                border: solid;
+                border-color: $azul3 transparent;
+                border-width: .4em .4em 0 .4em;
+                bottom: 1.4rem;
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: 99;
+            }
+        }
+        .chuck-norris ul li {
+            color: gold;
         }
     }
 }

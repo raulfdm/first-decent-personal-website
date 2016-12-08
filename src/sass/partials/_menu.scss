@@ -1,31 +1,48 @@
 #menu {
-    @include bg-opacity(#fff, 1);    
+    display: flex;
+    @include bg-opacity(#fff, 1);
     @include shadow3;
-    z-index: 1;     
+    z-index: 1;
     @media screen and (min-width: 780px) {
         max-height: 100%;
         width: 100%;
         top: 0;
+    }
+    #meu-nome {
+        font-family: Philosopher, sans-serif;
+        align-self: center;
+        vertical-align: baseline;
+        display: inline-block;
+        font-size: 1.5rem;
+        padding: 1.5rem 0;
+        @media screen and (min-width: 780px) {
+            padding: 0;
+        }
+        small {
+            display: block;
+            font-size: 65%;
+        }
     }
     ul {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         padding: 0;
-        margin: 0;        
+        margin: 0;
         width: 100%;
         @media screen and (min-width: 780px) {
+            //width: 80%;
             flex-direction: row;
             justify-content: center;
         }
         li {
-            display: flex;            
+            display: flex;
             justify-content: center;
             margin: 0;
             width: 100%;
-            text-align: center;            
+            text-align: center;
             transition: all .1s;
-            &:hover {
+            &:hover:not(:first-child) {
                 background: $azul4;
                 color: #fff;
                 .fa {
@@ -35,7 +52,7 @@
             @media screen and (min-width: 780px) {
                 justify-content: flex-start;
                 flex-direction: row;
-                justify-content: center;                
+                justify-content: center;
                 padding: 0;
             }
             a {
@@ -55,24 +72,24 @@
                     padding: .5rem 1rem;
                 }
                 .fa {
-                    display: flex;
+                    //display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: 2rem;
+                    font-size: 2rem !important;
                     border: 1px solid $preto-claro;
                     border-radius: 50%;
-                    padding: .5rem;
+                    padding: .7rem;
                     align-self: center;
                     width: 2rem;
                     height: 2rem;
-                    @media screen and (min-width: 780px) {                        
-                        font-size: 1rem;
-                        width: 1rem;
-                        height: 1rem;
+                    @media screen and (min-width: 780px) {
+                        font-size: 1.6rem !important;
+                        width: 1.6rem;
+                        height: 1.6rem;
                         margin-right: 1rem;
                     }
                 }
-                span {
+                p {
                     align-self: center;
                 }
             }

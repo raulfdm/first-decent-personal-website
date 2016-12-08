@@ -8,7 +8,7 @@
     width: 100vw;
     height: 8rem;
     @media screen and (min-width: 780px) {
-        height: 13rem;
+        height: 10rem;
     }
     h2 {
         font-size: 1.2rem;
@@ -26,7 +26,7 @@
         flex-grow: 2;
         ul {
             width: 100%;
-            padding: 0;            
+            padding: 0;
             display: flex;
             align-items: center;
             li {
@@ -39,7 +39,7 @@
                     font-size: 3rem;
                     transition: all .1s;
                     &:hover {
-                        font-size: 5rem;                        
+                        font-size: 5rem;
                     }
                 }
             }

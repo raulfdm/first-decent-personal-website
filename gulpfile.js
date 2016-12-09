@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
     sass = require('gulp-sass'),
     babel = require('gulp-babel'),
-    browser = require('browser-sync'),    
+    browser = require('browser-sync'),
     usemin = require('gulp-usemin'),
     cssmin = require('gulp-cssmin'),
     imagemin = require('gulp-imagemin'),
@@ -13,7 +13,7 @@ const gulp = require('gulp'),
 
 
 gulp.task('build', ['clean'], function() {
-    gulp.start('sass', 'imagemin', 'usemin');
+    gulp.start('sass', 'imagemin', 'usemin','copyFiles');
 })
 
 gulp.task('imagemin', function() {
@@ -29,18 +29,23 @@ gulp.task('usemin', function() {
                 collapseWhitespace: true,
                 removeComments: true
             })],
-            'js': [/*babel({
-                presets: ['es2015']
-            }), 
-            uglify*/],
+            'js': [babel({
+                    presets: ['es2015']
+                })/*,
+                uglify*/
+            ],
             'jsAttributes': {
-                async: true
+                async: false
             },
             'css': [autoprefixer, cssmin]
         }))
         .pipe(gulp.dest('dist/'))
 });
 
+gulp.task('copyFiles', function() {
+    gulp.src('src/scripts/libs/**/*')
+        .pipe(gulp.dest('dist/scripts/libs/'));
+});
 
 gulp.task('clean', function() {
     return gulp.src('dist/')

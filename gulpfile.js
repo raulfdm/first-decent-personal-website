@@ -13,7 +13,7 @@ const gulp = require('gulp'),
 
 
 gulp.task('build', ['clean'], function() {
-    gulp.start('sass', 'imagemin', 'usemin','copyFiles');
+    gulp.start('sass', 'imagemin', 'usemin', 'copyFiles');
 })
 
 gulp.task('imagemin', function() {
@@ -31,8 +31,9 @@ gulp.task('usemin', function() {
             })],
             'js': [babel({
                     presets: ['es2015']
-                })/*,
-                uglify*/
+                })
+                /*,
+                                uglify*/
             ],
             'jsAttributes': {
                 async: false
@@ -45,6 +46,8 @@ gulp.task('usemin', function() {
 gulp.task('copyFiles', function() {
     gulp.src('src/scripts/libs/**/*')
         .pipe(gulp.dest('dist/scripts/libs/'));
+    gulp.src('src/CNAME')
+        .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('clean', function() {

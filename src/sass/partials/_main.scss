@@ -1,0 +1,28 @@
+@import './partials/_habilidades';
+@import './partials/_portifolio';
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    @include shadow2;
+    @media #{$tablet} {
+        margin-top: 3.75rem;
+    }
+    @media #{$widescreen} {
+        @include shadow4;
+        width: 80%;
+        margin: 2rem auto; 
+    }
+    section {
+        &:not(:first-child) {
+            padding: 1rem;
+        }
+        width: 100%;
+        &>h2 {
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.8rem;
+            line-height: 1.7rem;
+        }
+    }
+}

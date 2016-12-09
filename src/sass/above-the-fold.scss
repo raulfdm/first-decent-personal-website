@@ -1,0 +1,13 @@
+
+@import './helpers/_mixins';
+@import './helpers/_variaveis';
+
+
+//Libs e fontes
+@import './libs/_normalize';
+
+//
+@import '_geral';
+@import './partials/_menu';
+@import './partials/_home';
+@import './partials/_sobre';

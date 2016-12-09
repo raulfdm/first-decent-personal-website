@@ -1,0 +1,14 @@
+#sobre {
+    @include white-bg;
+    @media #{$desktop} {
+        padding-right: 9rem !important;
+        padding-left: 9rem !important;
+    }
+    p {
+        line-height: 1.5rem;
+        text-indent: 3rem;
+        text-align: justify;
+    }
+    padding-right: 2rem !important;
+    padding-left: 2rem !important;
+}

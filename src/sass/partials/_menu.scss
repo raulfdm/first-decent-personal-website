@@ -3,7 +3,7 @@
     @include bg-opacity(#fff, 1);
     @include shadow3;
     z-index: 1;
-    @media screen and (min-width: 780px) {
+    @media #{$tablet} {
         max-height: 100%;
         width: 100%;
         top: 0;
@@ -15,8 +15,13 @@
         display: inline-block;
         font-size: 1.5rem;
         padding: 1.5rem 0;
-        @media screen and (min-width: 780px) {
-            padding: 0;
+        margin: 0;
+        @media #{$tablet} {
+            padding: 0 .5rem;
+            font-size: 1.2rem
+        }
+        @media #{$desktop} {
+            font-size: 1.6rem
         }
         small {
             display: block;
@@ -24,14 +29,13 @@
         }
     }
     ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
         padding: 0;
         margin: 0;
         width: 100%;
-        @media screen and (min-width: 780px) {
-            //width: 80%;
+        @media #{$tablet} {
+            flex-direction: column;
+            justify-content: space-around;
+            display: flex;
             flex-direction: row;
             justify-content: center;
         }
@@ -39,9 +43,17 @@
             display: flex;
             justify-content: center;
             margin: 0;
+            margin-top: 1rem;
             width: 100%;
             text-align: center;
             transition: all .1s;
+            @media #{$tablet} {
+                justify-content: flex-start;
+                flex-direction: row;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+            }
             &:hover:not(:first-child) {
                 background: $azul4;
                 color: #fff;
@@ -49,27 +61,21 @@
                     border: 1px solid #fff;
                 }
             }
-            @media screen and (min-width: 780px) {
-                justify-content: flex-start;
-                flex-direction: row;
-                justify-content: center;
-                padding: 0;
-            }
             a {
-                //flex
                 display: flex;
                 align-items: baseline;
                 flex-direction: column;
                 justify-content: center;
                 line-height: normal;
-                margin-top: .3125rem;
+                //margin-top: .3125rem;
                 text-align: center;
                 text-transform: uppercase;
-                padding: 1rem 0;
+                padding: .6rem 0;
                 width: 100%;
-                @media screen and (min-width: 780px) {
+                @media #{$tablet} {
+                    //padding: .5rem 1rem;
                     flex-direction: row;
-                    padding: .5rem 1rem;
+                    padding-right: .8rem;
                 }
                 .fa {
                     //display: flex;
@@ -82,15 +88,26 @@
                     align-self: center;
                     width: 2rem;
                     height: 2rem;
-                    @media screen and (min-width: 780px) {
-                        font-size: 1.6rem !important;
-                        width: 1.6rem;
-                        height: 1.6rem;
-                        margin-right: 1rem;
+                    @media #{$tablet} {
+                        $font-fa-size: 1rem;
+                        font-size: $font-fa-size !important;
+                        width: $font-fa-size;
+                        height: $font-fa-size;
+                    }
+                    @media #{$desktop} {
+                        $font-fa-size: 1.5rem;
+                        font-size: $font-fa-size !important;
+                        width: $font-fa-size;
+                        height: $font-fa-size;
                     }
                 }
                 p {
                     align-self: center;
+                    margin-bottom: 0;
+                    @media #{$tablet} {
+                        font-size: 0.8rem;
+                        margin: 0 0 0 .5rem;
+                    }
                 }
             }
         }
@@ -98,6 +115,7 @@
 }
 
 .toggle-menu {
+    border: none;
     position: fixed;
     top: 5px;
     right: 5px;
@@ -107,7 +125,10 @@
     background-color: $azul1;
     box-sizing: border-box;
     padding: .7rem;
-    font-size: 1.5rem !important;
+    font-size: 1.8rem !important;
+    &:focus {
+        outline: none;
+    }
 }
 
 .slideout-menu {
@@ -129,7 +150,6 @@
 }
 
 .slideout-open,
-.slideout-open body,
 .slideout-open .slideout-panel {
     overflow: hidden;
 }
@@ -138,7 +158,7 @@
     display: block;
 }
 
-@media screen and (min-width: 780px) {
+@media #{$tablet} {
     .slideout-panel {
         margin-left: 0;
         position: static;

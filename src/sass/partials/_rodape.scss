@@ -7,9 +7,6 @@
     font-size: 0;
     width: 100vw;
     height: 8rem;
-    @media screen and (min-width: 780px) {
-        height: 10rem;
-    }
     h2 {
         font-size: 1.2rem;
         font-weight: bold;
@@ -21,7 +18,7 @@
         display: flex;
         align-items: center;
         text-align: center;
-        margin: 0 auto;
+        margin: 1.4rem auto;
         width: auto;
         flex-grow: 2;
         ul {
@@ -33,9 +30,9 @@
                 display: inline-block;
                 margin: 0 .5rem;
                 i {
-                    @media screen and (min-width: 780px) {
+                    /* @media screen and (min-width: 780px) {
                         font-size: 4rem;
-                    }
+                    }*/
                     font-size: 3rem;
                     transition: all .1s;
                     &:hover {
@@ -50,7 +47,7 @@
         text-align: center;
         background-color: $azul3;
         align-self: flex-end;
-        padding: 6px 0;
+        padding: 6px 0 !important;
         font-size: .8rem;
         p {
             display: inline-block;

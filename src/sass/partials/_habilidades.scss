@@ -6,19 +6,15 @@
     justify-content: center;
     padding: 0 3rem 3rem;
     min-height: 18.75rem;
-    @media #{$md-md} {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
     .habilidades-content {
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         max-width: 50rem;
-        @media #{$mq-lg} {
-            max-width: 974px;
-            justify-content: flex-start;
+        @media #{$widescreen} {
+            max-width: 100%;
+            justify-content: space-around;
         }
     }
     h2 {
@@ -26,16 +22,16 @@
     }
     .categoria {
         width: 100%;
-        margin: .5rem 0;
+        margin: 1rem .5rem;
         max-width: 16.25rem;
         min-width: 15rem;
-        @media #{$md-md} {
+        @media #{$widescreen} {
             margin-left: 2rem;
             margin-right: 2rem;
         }
-        @media #{$mq-md-lg} {}
         .categoria-titulo {
-            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            margin: 1rem 0;
             text-align: center;
             text-transform: uppercase;
             font-style: italic;

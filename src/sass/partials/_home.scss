@@ -1,11 +1,13 @@
 #home {
     background-repeat: no-repeat;
-    background-position-x: -20.375rem;
-    background-position-y: -2.8125rem;
+    background-position-y: -8rem;
     padding: 0;
-    @media screen and (min-width: 780px) {
-        background-position-x: 0;
+    @media #{$tablet} {
+        background-position-y: -3.5rem;
         background-size: cover;
+    }
+    @media #{$desktop} {
+        background-position-y: -8.5rem;
     }
     .over {
         padding-top: 3rem;
@@ -13,7 +15,6 @@
         flex-wrap: wrap;
         justify-content: center;
         color: #fff;
-        //aqui
         @include bg-opacity($azul1, .8);
         .img {
             img {
@@ -33,14 +34,18 @@
             .infos-nome {
                 font-weight: normal;
                 font-size: 3rem;
-                @media screen and (min-width: 780px) {
+                @media #{$desktop} {
                     font-size: 4.5rem;
+                    margin: 1.8rem 0
                 }
             }
             .infos-cargo {
                 font-style: italic;
                 font-size: 1rem;
                 display: block;
+                @media #{$desktop} {
+                    font-size: 1.5rem;
+                }
             }
         }
     }

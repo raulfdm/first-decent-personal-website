@@ -4,10 +4,13 @@
     display: flex;
     flex-wrap: wrap;
     @include shadow2;
-    @media screen and (min-width: 780px) {
-        @include shadow4;        
-            width: 80%;
-            margin: 5rem auto 2rem;
+    @media #{$tablet} {
+        margin-top: 3.75rem;
+    }
+    @media #{$widescreen} {
+        @include shadow4;
+        width: 80%;
+        margin: 5rem auto 2rem;
     }
     section {
         &:not(:first-child) {

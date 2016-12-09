@@ -1,5 +1,5 @@
 let slideout = new Slideout({
-    'panel': document.getElementById('content'),
+    'panel': document.getElementById('container'),
     'menu': document.getElementById('menu'),
     'fx': 'ease-in-out',
     'padding': 160,

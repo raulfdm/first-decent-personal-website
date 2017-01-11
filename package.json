@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prd-server": "yarn gulp server",
+    "dist-server": "yarn gulp server-dist",
+    "build": "yarn gulp build",
+    "deploy": "yarn gulp deploy"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +24,6 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
-    "gulp-usemin": "^0.3.25"    
+    "gulp-usemin": "^0.3.25"
   }
 }

@@ -17,23 +17,23 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway|Philosopher" rel="stylesheet">
     <!--build:css css/first.min.css -->
     <link rel="preload" as="style" href="css/above-the-fold.css" onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="css/above-the-fold.css">
-    </noscript>
-    <!--endbuild-->
-    <!--build:css css/second.min.css -->
-    <link rel="stylesheet" href="css/below-the-fold.css">
-    <!--endbuild-->
-    <!--[if lt IE 9]>
+<noscript>
+    <link rel="stylesheet" href="css/above-the-fold.css">
+</noscript>
+<!--endbuild-->
+<!--build:css css/second.min.css -->
+<link rel="stylesheet" href="css/below-the-fold.css">
+<!--endbuild-->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
 </head>
 
 <body>
     <script>
-        (function(i, s, o, g, r, a, m) {
+        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
+            i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o),
@@ -46,615 +46,683 @@
         ga('create', 'UA-87465404-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <!--Botão Toggle Menu-->
-    <button href="#" class="toggle-menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
-    <!--Menu-->
-    <nav id="menu">
+<!--Botão Toggle Menu-->
+<button href="#" class="toggle-menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+<!--Menu-->
+<nav id="menu">
 
-        <ul>
-            <li>
-                <a id="meu-nome" data-scroll href="#home">
+    <ul>
+        <li>
+            <a id="meu-nome" data-scroll href="#home">
                     Raul de Melo<small> Dev. Front-end</small>
                 </a>
-            </li>
-            <li>
-                <a data-scroll href="#sobre" class="">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <p>Sobre</p>
-                </a>
-            </li>
-            <li>
-                <a data-scroll href="#habilidades" class="">
-                    <i class="fa fa-terminal" aria-hidden="true"></i>
-                    <p>Habilidades</p>
-                </a>
-            </li>
-            <li>
-                <a data-scroll href="#portifolio" class="">
-                    <i class="fa fa-suitcase" aria-hidden="true"></i>
-                    <p>Portifólio</p>
-                </a>
-            </li>
-            <li>
+        </li>
+        <li>
+            <a data-scroll href="#sobre" class="">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <p>Sobre</p>
+            </a>
+        </li>
+        <li>
+            <a data-scroll href="#habilidades" class="">
+                <i class="fa fa-terminal" aria-hidden="true"></i>
+                <p>Habilidades</p>
+            </a>
+        </li>
+        <li>
+            <a data-scroll href="#portifolio" class="">
+                <i class="fa fa-suitcase" aria-hidden="true"></i>
+                <p>Portifólio</p>
+            </a>
+        </li>
+        <li>
 
 
-                <a data-scroll href="#rodape" class="">
-                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                    <p>Contatos</p>
-                </a>
-            </li>
+            <a data-scroll href="#rodape" class="">
+                <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                <p>Contatos</p>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!--Conteúdo Principal-->
+<main id="container">
+    <!--HOME-->
+    <section id="content">
+        <section id="home" class="section-js" style="background-image:url('img/background.jpg');">
+<!--Efeito azul na imagem-->
+<div class="over">
+    <!--Foto Pessoal-->
+    <div class="img">
+        <img src="img/raul.jpg" alt="Foto do Raul">
+    </div>
+    <!--Informações Gerais-->
+    <div class="infos">
+        <h1 class="infos-nome">Raul F. de Melo<span class="infos-cargo">Desenvolvedor Front-End</span></h1>
+    </div>
+</div>
+</section>
+<!--SOBRE-->
+<section id="sobre" class="section-js">
+    <h2>Sobre</h2>
+    <p>Amante de jogos, tive contato com tecnologia de desenvolvimento pela primeira vez aos 14 anos, enquanto tentava subir
+        um servidor de
+        <a href="tibia.com" target="_blank">
+            <u>Tibia</u>
+        </a> (saudoso), configurando arquivos de personagens e um banco de dados. Mesmo sem ter ideia do que realmente tudo aquilo
+        significava, eu tinha um objetivo e um único proposito: personalizar o jogo de uma forma que eu acreditava que seria
+        melhor que o original e disponibilizar para amigos e jogadores da comunidade da época. Deu tão certo que na época
+        cheguei a ter 100 players online (yeah).</p>
+    <p>Depois tentar fugir da "força", fazendo cursos como Técnico em Segurança do Trabalho, aos 21, resolvi me entregar a ela
+        e dedicar minha vida a entender os mistérios que envolvem a área
+        <strike>mística</strike> da tecnologia em prol de proporcionar soluções e resolver problemas.</p>
+    <p>Hoje, aos <span id="idade">25</span> e próximo de concluir minha graduação em Sistemas de Informação, estudo para me
+        tornar um desenvolvedor conceituado. Mantenho a minha curiosidade sempre aguçada, consumindo cursos online,
+        <i>newsletter</i>, participando e interagindo com os grupos de devs e na comunidade em geral, para sempre me manter
+        atualizado.
+    </p>
+    <p>Além de aplicar meus estudos em projetos práticos e com propósito, busco auxiliar os devs iniciantes sempre que possuo
+        conhecimento suficiente para tal. Estou aberto para contatos de trabalhos, experiências <i>open source</i> e discussões
+        sobre esses tópicos a qualquer momento, é só me procurar em qualquer rede social. =)</p>
+</section>
+<!--Skills-->
+<section id="habilidades" class="section-js">
+    <h2>Habilidades</h2>
+    <div class="habilidades-content">
+        <div class="categoria ranking">
+            <h4 class="categoria-titulo">Ranking</h4>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Hello World<span class="tooltip" title="Sabe do que se trata e já fez um hello world simbólico.">?</span></h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Jovem Entusiasta<span class="tooltip" title="Colocou a tecnologia em algum projeto experimental, mas ainda está entendendo os conceitos">?</span></h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Confiante<span class="tooltip" title="Sente confiança pra usar a tecnologia em projetos.">?</span></h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">PRO<span class="tooltip" title="Já tem um nível intermediário e consegue usar em produção.">?</span></h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Deus do Trovão<span class="tooltip" title="Domina a tecnologia e se sente confiante para resolver qualquer problema.">?</span></h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Neo (The One)<span class="tooltip" title="Deus lendário da programação. Entende muito do conceito e consegue reprogramar a matrix.">?</span></h4>
+                <div class="habilidade-dominio chuck-norris">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--LIBS-->
+        <div class="categoria">
+            <h4 class="categoria-titulo">Bibliotecas</h4>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">BabelJS</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Jasmine</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">jQuery</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">MomentJS</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">ReactJS</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--CODE Front-->
+        <div class="categoria">
+            <h4 class="categoria-titulo">Code Front</h4>
+            <!--CSS-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">CSS</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--HTML-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">HTML</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--JS-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Javascript</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Perfomance</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--SASS-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Sass</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--SASS-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">SEO</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--CODE Back-->
+        <div class="categoria">
+            <h4 class="categoria-titulo">Code Back</h4>
+            <!--ANDROID-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Android</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--JAVA-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Java</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--NODE-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">NodeJS</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--SQL-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">SQL Oracle</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--FRAMEWORKS-->
+        <div class="categoria">
+            <h4 class="categoria-titulo">Frameworks</h4>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">AngularJS 1.x</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">AngularJS 2</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Bootstrap 3</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">MaterializeCSS</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Ferramentas-->
+        <div class="categoria">
+            <h4 class="categoria-titulo">Ferramentas</h4>
+            <!--GIT-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Git</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--GULP-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Gulp</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--NPM-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">NPM/Yarn</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!--PS-->
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Photoshop</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Patterns e Técnicas-->
+        <div class="categoria">
+            <h4 class="categoria-titulo">Patterns e Técnicas</h4>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Programção Funcional</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Mobile First</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">MVC</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Orientação a Objetos</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">Regular Expressions</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">SEO</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="habilidade">
+                <h4 class="habilidade-titulo">TDD</h4>
+                <div class="habilidade-dominio">
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--Portifólio-->
+<section id="portifolio" class="section-js">
+    <h2>Portifólio</h2>
+    <div class="card" data-repo="taco">
+        <div class="card-img">
+            <img src="img/api.png" width="320px" height="167px" alt="Imagem informando que este projeto se trata de uma API">
+        </div>
+        <div class="card-content">
+            <h3>Taco - Tabela brasileira de composição de alimentos</h3>
+            <p>API desenvolvida em NodeJS apenas para prover os dados da TACO (Unicamp) em formato JSON e facilitar o uso em
+                aplicações com foco alimentar.</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://github.com/raulfdm/taco" target="_blank" class="link-projeto">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
+            <p class="data-atualizacao">Atualizado em
+                <time>24/09/2016</time>
+            </p>
+        </div>
+    </div>
+    <div class="card" data-repo="bodybuilder-card">
+        <div class="card-img">
+            <img src="img/api.png" width="320px" height="167px" alt="Imagem informando que este projeto se trata de uma API">
+        </div>
+        <div class="card-content">
+            <h3>Bodybuilder Card</h3>
+            <p>API desenvolvida em NodeJS para manter uma base de dados de atletas fisiculturistas contento uma foto de sua
+                melhor apresentação, estatisticas e atributos. Esses dados servirão futuramente para a criação de um card
+                game.</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://github.com/raulfdm/bodybuilder-card" target="_blank" class="link-projeto">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
+            <p class="data-atualizacao">Atualizado em
+                <time>24/09/2016</time>
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-img" data-repo="controle-ponto">
+            <img class="cinza" src="img/controle-ponto-full.png" alt="Imagem da tela inicial do controle de ponto">
+        </div>
+        <div class="card-content">
+            <h3>Controle de Ponto</h3>
+            <p>Aplição desenvolvida para fazer o controle de registros de pontos, utilizando Javascript puro, ES6 e tecnologias
+                adjacentes. Migração para utilizar React em andamento.</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://github.com/raulfdm/controle-ponto" target="_blank" class="link-projeto" target="_blank">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
+            <p class="data-atualizacao">Atualizado em
+                <time>28/10/2016</time>
+            </p>
+        </div>
+    </div>
+    <div class="card portifolio-resume" data-repo="resume">
+        <div class="card-img">
+            <img src="img/resume-full.png" width="320px" height="167px" alt="Imagem da tela inicial do site do currículo">
+        </div>
+        <div class="card-content">
+            <h3>Resume</h3>
+            <p>Site desenvolvido para prática do desenvolvimento web. A proposta foi converter o PDF do meu currículo para um
+                website responsivo.</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://github.com/raulfdm/resume" target="_blank" class="link-projeto" target="_blank">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
+            <p class="data-atualizacao">Atualizado em
+                <time>06/10/2016</time>
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-img" data-repo="algoritmo-sistemas-produtivos">
+            <img src="img/algoritmo-full.png" width="320px" height="167px" alt="Imagem da tela inicial do site do projeto algoritmo de sistemas produtivos">
+        </div>
+        <div class="card-content">
+            <h3>Algoritmo Sistemas Produtivos</h3>
+            <p>Algoritmo desenvolvido para resolver um algoritmo proposto na aula de <strong>Sistemas Produtivos</strong>. Seu
+                proposito é analisar uma matriz e calcular o menor custo produtivo.</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://github.com/raulfdm/algoritmo-sistemas-produtivos/" target="_blank" class="link-projeto">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
+            <p class="data-atualizacao">Atualizado em
+                <time>24/05/2016</time>
+            </p>
+        </div>
+    </div>
+</section>
+</section>
+<!--Rodapé-->
+<footer id="rodape">
+    <h2>Me Contate</h2>
+    <section class="rodape-contatos">
+        <ul>
+            <li><a href="http://github.com/raulfdm" target="_blank">Github<i class="fa fa-github" aria-hidden="true"></i></a></li>
+            <li><a href="http://linkedin.com/in/raulfdm" target="_blank">Linkedin<i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+            <li><a href="http://facebook.com/raulfdm" target="_blank">Facebook<i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            <li><a href="mailto:melo.raulf@gmail.com">E-mail<i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+            <li><a href="http://twitter.com/raul_fdm" target="_blank">Twitter<i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="http://codepen.io/raulfdm/" target="_blank">Codepen<i class="fa fa-codepen" aria-hidden="true"></i></a></li>
         </ul>
-    </nav>
-    <!--Conteúdo Principal-->
-    <main id="container">
-        <!--HOME-->
-        <section id="content">
-            <section id="home" class="section-js" style="background-image:url('img/background.jpg');">
-                <!--Efeito azul na imagem-->
-                <div class="over">
-                    <!--Foto Pessoal-->
-                    <div class="img">
-                        <img src="img/raul.jpg" alt="Foto do Raul">
-                    </div>
-                    <!--Informações Gerais-->
-                    <div class="infos">
-                        <h1 class="infos-nome">Raul F. de Melo<span class="infos-cargo">Desenvolvedor Front-End</span></h1>
-                    </div>
-                </div>
-            </section>
-            <!--SOBRE-->
-            <section id="sobre" class="section-js">
-                <h2>Sobre</h2>
-                <p>Amante de jogos, tive contato com tecnologia de desenvolvimento pela primeira vez aos 14 anos, enquanto tentava subir um servidor de <a href="tibia.com" target="_blank"><u>Tibia</u></a> (saudoso), configurando arquivos de personagens e um banco de dados. Mesmo sem ter ideia do que realmente tudo aquilo
-                    significava, eu tinha um objetivo e um único proposito: personalizar o jogo de uma forma que eu acreditava que seria melhor que o original e disponibilizar para amigos e jogadores da comunidade da época. Deu tão certo que na época cheguei a ter 100 players online (yeah).</p>
-                <p>Depois tentar fugir da "força", fazendo cursos como Técnico em Segurança do Trabalho, aos 21, resolvi me entregar a ela e dedicar minha vida a entender os mistérios que envolvem a área <strike>mística</strike> da tecnologia em prol de proporcionar
-                    soluções e resolver problemas.</p>
-                <p>Hoje, aos <span id="idade">25</span> e próximo de concluir minha graduação em Sistemas de Informação, estudo para me tornar um desenvolvedor conceituado. Mantenho a minha curiosidade sempre aguçada, consumindo cursos online,
-                    <i>newsletter</i>, participando e interagindo com os grupos de devs e na comunidade em geral, para sempre me manter atualizado.</p>
-                <p>Além de aplicar meus estudos em projetos práticos e com propósito, busco auxiliar os devs iniciantes sempre que possuo conhecimento suficiente para tal. Estou aberto para contatos de trabalhos, experiências <i>open source</i> e discussões
-                    sobre esses tópicos a qualquer momento, é só me procurar em qualquer rede social. =)</p>
-            </section>
-            <!--Skills-->
-            <section id="habilidades" class="section-js">
-                <h2>Habilidades</h2>
-                <div class="habilidades-content">
-                    <div class="categoria ranking">
-                        <h4 class="categoria-titulo">Ranking</h4>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Hello World<span class="tooltip" title="Sabe do que se trata e já fez um hello world simbólico.">?</span></h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Jovem Entusiasta<span class="tooltip" title="Colocou a tecnologia em algum projeto experimental, mas ainda está entendendo">?</span></h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Confiante<span class="tooltip" title="Sente confiança pra usar a tecnologia, mas ainda precisa melhorar.">?</span></h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">PRO<span class="tooltip" title="Já tem um nível intermediário e consegue usar em produção">?</span></h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Deus do Trovão<span class="tooltip" title="Domina a tecnologia. Consegue fazer milagres.">?</span></h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Neo (The One)<span class="tooltip" title="Deus lendário da programação. Capacidade de reprogramar a matrix">?</span></h4>
-                            <div class="habilidade-dominio chuck-norris">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--LIBS-->
-                    <div class="categoria">
-                        <h4 class="categoria-titulo">Bibliotecas</h4>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">BabelJS</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">jQuery</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">MomentJS</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">ReactJS</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--CODE Front-->
-                    <div class="categoria">
-                        <h4 class="categoria-titulo">Code Front</h4>
-                        <!--CSS-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">CSS</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--HTML-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">HTML</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--JS-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Javascript</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Perfomance</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--SASS-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Sass</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--SASS-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">SEO</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--CODE Back-->
-                    <div class="categoria">
-                        <h4 class="categoria-titulo">Code Back</h4>
-                        <!--ANDROID-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Android</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--JAVA-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Java</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--NODE-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">NodeJS</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--SQL-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">SQL Oracle</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--FRAMEWORKS-->
-                    <div class="categoria">
-                        <h4 class="categoria-titulo">Frameworks</h4>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">AngularJS 1.x</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">AngularJS 2</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Bootstrap 3</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">MaterializeCSS</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Ferramentas-->
-                    <div class="categoria">
-                        <h4 class="categoria-titulo">Ferramentas</h4>
-                        <!--GIT-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Git</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--GULP-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Gulp</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--NPM-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">NPM Packages</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--PS-->
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Photoshop</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Patterns e Técnicas-->
-                    <div class="categoria">
-                        <h4 class="categoria-titulo">Patterns e Técnicas</h4>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Programção Funcional</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Mobile First</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">MVC</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Orientação a Objetos</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">Regular Expressions</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="habilidade">
-                            <h4 class="habilidade-titulo">SEO</h4>
-                            <div class="habilidade-dominio">
-                                <ul>
-                                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--Portifólio-->
-            <section id="portifolio" class="section-js">
-                <h2>Portifólio</h2>
-                <div class="card">
-                    <div class="card-img">
-                        <img class="cinza" src="img/controle-ponto-full.png" alt="Imagem da tela inicial do controle de ponto">
-                    </div>
-                    <div class="card-content">
-                        <h3><a href="https://raulfdm.github.io/controle-ponto/" target="_blank">Controle de Ponto</a></h3>
-                        <p>Aplição desenvolvida para fazer o controle de registros de pontos, utilizando Javascript puro, ES6 e tecnologias adjacentes. Migração para utilizar React em andamento.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://github.com/raulfdm/controle-ponto" class="link-projeto" target="_blank">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
-                        <p class="data-atualizacao">Atualizado em <time>28/10/2016</time></p>
-                    </div>
-                </div>
-                <div class="card portifolio-resume">
-                    <div class="card-img">
-                        <img src="img/resume-full.png" width="320px" height="167px" alt="Imagem da tela inicial do site do currículo">
-                    </div>
-                    <div class="card-content">
-                        <h3><a href="https://raulfdm.github.io/resume" target="_blank">Resume</a></h3>
-                        <p>Site desenvolvido para prática do desenvolvimento web. A proposta foi converter o PDF do meu currículo para um website responsivo.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://github.com/raulfdm/resume" class="link-projeto" target="_blank">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
-                        <p class="data-atualizacao">Atualizado em <time>06/10/2016</time></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="img/gh-search-full.png" width="320px" height="167px" alt="Imagem da tela inicial do projeto Github profile search">
-                    </div>
-                    <div class="card-content">
-                        <h3><a href="https://raulfdm.github.io/github-profile-search/" target="_blank">Github Profile Search</a></h3>
-                        <p>Aplicação para consultar os perfis do Github através de sua API e focado no aprendizado da tecnologia React.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://github.com/raulfdm/github-profile-search" class="link-projeto">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
-                        <p class="data-atualizacao">Atualizado em <time>24/09/2016</time></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="img/algoritmo-full.png" width="320px" height="167px" alt="Imagem da tela inicial do site do projeto algoritmo de sistemas produtivos">
-                    </div>
-                    <div class="card-content">
-                        <h3><a href="http://raulfdm.github.io/algoritmo-sistemas-produtivos/">Algoritmo Sistemas Produtivos</a></h3>
-                        <p>Algoritmo desenvolvido para resolver um algoritmo proposto na aula de <strong>Sistemas Produtivos</strong>. Seu proposito é analisar uma matriz e calcular o menor custo produtivo.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://github.com/raulfdm/algoritmo-sistemas-produtivos/" target="_blank" class="link-projeto">ver mais<i class="fa fa-external-link" aria-hidden="true"></i></a>
-                        <p class="data-atualizacao">Atualizado em <time>24/05/2016</time></p>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <!--Rodapé-->
-        <footer id="rodape">
-            <h2>Me Contate</h2>
-            <section class="rodape-contatos">
-                <ul>
-                    <li><a href="http://github.com/raulfdm" target="_blank">Github<i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li><a href="http://linkedin.com/in/raulfdm" target="_blank">Linkedin<i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                    <li><a href="http://facebook.com/raulfdm" target="_blank">Facebook<i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                    <li><a href="mailto:melo.raulf@gmail.com">E-mail<i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                    <li><a href="http://twitter.com/raul_fdm" target="_blank">Twitter<i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
-            </section>
-            <section class="rodape-copyright">
-                <p>Developed by Raul F. de Melo</p>
-            </section>
-        </footer>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.12/slideout.min.js"></script>
-    <script async src="scripts/libs/smooth-scroll.min.js"></script>
-    <script async src="scripts/libs/cssrelpreload.js"></script>
-    <script async src="scripts/libs/loadcss.js"></script>
-    <!--build:js scripts/index.min.js -->
-    <script src="scripts/slide-ini.js"></script>
-    <!--endbuild-->
-    <script async>
+    </section>
+    <section class="rodape-copyright">
+        <p>Developed by Raul F. de Melo</p>
+    </section>
+</footer>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/0.1.12/slideout.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script async src="scripts/libs/smooth-scroll.min.js"></script>
+<script async src="scripts/libs/cssrelpreload.js"></script>
+<script async src="scripts/libs/loadcss.js"></script>
+<!--build:js scripts/index.min.js -->
+<script src="scripts/fetch.polyfill.js"></script>
+<script src="scripts/search-repo.github.js"></script>
+<script src="scripts/slide-ini.js"></script>
+<!--endbuild-->
+<script async>
         let idade = new Date().getFullYear() - 1991;
         document.getElementById('idade').textContent = idade;
-    </script>
-    <script>
-    </script>
+</script>
 </body>
 
 </html>

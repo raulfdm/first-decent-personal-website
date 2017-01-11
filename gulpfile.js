@@ -32,8 +32,8 @@ gulp.task('usemin', function() {
             'js': [babel({
                     presets: ['es2015']
                 })
-                /*,
-                                uglify*/
+                ,
+                                uglify
             ],
             'jsAttributes': {
                 async: false

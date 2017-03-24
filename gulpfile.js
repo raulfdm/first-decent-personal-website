@@ -9,31 +9,35 @@ const gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     ghPages = require('gulp-gh-pages'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean')
+pug = require('gulp-pug');
 
-
-gulp.task('build', ['clean'], function() {
+gulp.task('build', ['clean'], function () {
     gulp.start('sass', 'imagemin', 'usemin', 'copyFiles');
 })
 
-gulp.task('imagemin', function() {
-    return gulp.src('src/img/**/*')
+gulp.task('pug', function () {
+    return gulp
+        .src('src/index.pug')
+        .pipe(pug({}))
+        .pipe(gulp.dest('dist/'))
+})
+
+gulp.task('imagemin', function () {
+    return gulp
+        .src('src/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('usemin', function() {
-    return gulp.src('src/**/*.html')
+gulp.task('usemin', function () {
+    return gulp
+        .src('src/**/*.html')
         .pipe(usemin({
-            'html': [htmlmin({
-                collapseWhitespace: true,
-                removeComments: true
-            })],
-            'js': [babel({
-                    presets: ['es2015']
-                })
-                ,
-                                uglify
+            'html': [htmlmin({collapseWhitespace: true, removeComments: true})],
+            'js': [
+                babel({presets: ['es2015']}),
+                uglify
             ],
             'jsAttributes': {
                 async: false
@@ -43,25 +47,29 @@ gulp.task('usemin', function() {
         .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('copyFiles', function() {
-    gulp.src('src/scripts/libs/**/*')
+gulp.task('copyFiles', function () {
+    gulp
+        .src('src/scripts/libs/**/*')
         .pipe(gulp.dest('dist/scripts/libs/'));
-    gulp.src('src/CNAME')
+    gulp
+        .src('src/CNAME')
         .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('clean', function() {
-    return gulp.src('dist/')
+gulp.task('clean', function () {
+    return gulp
+        .src('dist/')
         .pipe(clean());
 });
 
-gulp.task('sass', function() {
-    gulp.src('src/sass/*.scss')
+gulp.task('sass', function () {
+    gulp
+        .src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('src/css/'));
 });
 
-gulp.task('server', function() {
+gulp.task('server', function () {
 
     browser.init({
         server: {
@@ -71,15 +79,18 @@ gulp.task('server', function() {
 
     //Change Listeners
     gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp.watch('src/**/*.*').on('change', browser.reload);
+    gulp
+        .watch('src/**/*.*')
+        .on('change', browser.reload);
 });
 
-gulp.task('deploy', function() {
-    return gulp.src('./dist/**/*')
+gulp.task('deploy', function () {
+    return gulp
+        .src('./dist/**/*')
         .pipe(ghPages());
 });
 
-gulp.task('server-dist', function() {
+gulp.task('server-dist', function () {
 
     browser.init({
         server: {
@@ -89,5 +100,7 @@ gulp.task('server-dist', function() {
 
     //Change Listeners
     gulp.watch('dist/sass/**/*.scss', ['sass']);
-    gulp.watch('dist/**/*.*').on('change', browser.reload);
+    gulp
+        .watch('dist/**/*.*')
+        .on('change', browser.reload);
 });

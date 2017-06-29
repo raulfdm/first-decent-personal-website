@@ -3,52 +3,39 @@ html(lang="pt-br")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    // Mobile browsers colloring
-    meta(name="theme-color", content="rgba(41, 128, 185, .8)")
-    meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
-    meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    //-
+      Mobile browsers colloring
+      meta(name="theme-color", content="rgba(41, 128, 185, .8)")
+      meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
+      meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
+      meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Raul F. de Melo
-    //Favicons
+    //-Favicons
     link(rel="icon" type="img/png", href="img/png/favicon-32x32.png", sizes="32x32")
     link(rel="icon" type="img/png", href="img/png/favicon-16x16.png", sizes="16x16")
-    //OpenGraph
+    //-OpenGraph
     meta(property="og:title" content="Raul Felipe de Melo")
     meta(property="og:type" content="website")
     meta(property="og:description" content="Desenvoledor front-end")
     meta(property="og:url" content="http://rauldemelo.com.br")
     meta(property="og:image" content="http://rauldemelo.com.br/img/raul.jpg")
-    //Twitter cards
-  meta(name="twitter:card" content="summary")
-  meta(name="twitter:title" content="Raul Felipe de Melo")
-  meta(name="twitter:description" content="Desenvolvedor Front-end")
-  meta(name="twitter:url" content="http://rauldemelo.com.br")
-  meta(name="twitter:image" content="http://rauldemelo.com.br/img/raul.jpg")
-  //Css
-  //build:css assets/css/first.min.css
-  link(rel="preload" as="style" href="assets/css/above-the-fold.css" onload="this.rel='stylesheet'")
-  noscript
-    link(rel="stylesheet" href="assets/css/above-the-fold.css")
-  //endbuild
+    //- Twitter cards
+    meta(name="twitter:card" content="summary")
+    meta(name="twitter:title" content="Raul Felipe de Melo")
+    meta(name="twitter:description" content="Desenvolvedor Front-end")
+    meta(name="twitter:url" content="http://rauldemelo.com.br")
+    meta(name="twitter:image" content="http://rauldemelo.com.br/img/raul.jpg")
+    //- Css
+
   body
-    script(src='scripts/analytics.js')
+
     include includes/menu.pug
-    include includes/home.pug
-    include includes/about.pug
-    include includes/skills.pug
-    include includes/portfolio.pug
+
+    //-
+      main.main
+        include includes/home.pug
+        include includes/about.pug
+        include includes/skills.pug
+        include includes/portfolio.pug
+
     include includes/footer.pug
-    script(src='/app.js')
-    script
-      :babel
-        console.log("Hello World !!!");
-        class Person {
-          constructor(name) {
-            this.name = name;
-          }
-          sayName(){
-            console.log(`Hello, my name is ${this.name}`);
-          }
-        }
-        var person = new Person("Apoxx");
-        person.sayName();

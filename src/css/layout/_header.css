@@ -2,6 +2,7 @@
 	width: 100%;
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
+	padding: 1rem 0 0 0;
 }
 
 .container {
@@ -19,14 +20,17 @@
 	display: inline-block;
 	font-size: 2.5rem;
 	text-align: center;
+	font-family: 'Megrim', cursive;
 }
 
 .header__menu {
 	margin-left: auto;
+	padding: -2rem;
 }
 
 .header__menu__list {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
+	text-align: center;
 }
 
 .header__menu__list__item {
@@ -36,6 +40,7 @@
 .header__menu__list__item__link {
 	display: inline-block;
 	padding: 1rem;
+	font-family: 'Nixie One';
 	text-decoration: none;
 	color: inherit;
 	transition: .3s all;
@@ -47,10 +52,26 @@
 }
 
 @media screen and (max-width: 776px) {
+	.container {
+		width: 100%;
+	}
+	.header__logo {
+		font-size: 2rem;
+		margin-bottom: .8rem;
+	}
 	.header__menu {
 		margin-left: 0;
+		width: 100%;
 	}
-	.header__logo{
+	.header__logo {
 		margin-right: 0;
+	}
+	.header__menu__list {
+		font-size: 1.3rem;
+	}
+	.header__menu__list__item__link{
+		align-self: center;
+		padding-left:.5rem;
+		padding-right:.5rem;
 	}
 }

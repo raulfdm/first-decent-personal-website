@@ -6,6 +6,7 @@
 /*Layout*/
 @import './layout/_header.css';
 @import './layout/_main.css';
+@import './layout/_social.css';
 @import './layout/_footer.css';
 
 

@@ -1,0 +1,32 @@
+.social{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary-color);
+	background-color: var(--secondary-color);
+	padding: 1.5rem 0;
+}
+
+.social__title{
+	font-size: 2.8rem;
+	margin: 0 0 1rem 0;
+}
+
+.social__list{}
+
+.social__list__item{
+	display: inline-block;
+	margin: 0 .6rem;
+	font-size: 2.4rem;
+	transition: .2s all;
+}
+.social__list__item:hover{
+	transform: scale(1.4);
+}
+
+.social__list__item__link{
+	text-decoration: none;
+	color: inherit;
+}

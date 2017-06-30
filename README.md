@@ -5,8 +5,14 @@
 ## Stack
 
 - Task Runner: [Gulp](http://gulpjs.com/)
-- Preprocessing Tool: [SASS](http://sass-lang.com/)
+- CSS 
+	- Tooling: [PostCSS](http://postcss.org/)
+	- Methodologies
+		- [BEM](http://getbem.com/introduction/)
+		- [SMACSS](http://getbem.com/introduction/)
 - HTML Template Engine: [PUG](https://pugjs.org/api/getting-started.html)
+- Live Reload Server: [Lite Server](https://github.com/johnpapa/lite-server)
+
 
 ## Folder Structure
 ```
@@ -15,24 +21,39 @@
 ├── LICENSE
 ├── dist/
 ├── src/
-|   ├── assets/
-|   |   ├── css/
-|   |   ├── img/
-|   |   ├── scripts/
-|   |   |   └── script.js
-|   |   └── sass/
-|   |       └── helpers/
-|   |       └── libs/
-|   |       └── partials/
+|   ├── css/
+|   |   ├── base/
+|   |   |   ├── _colors.pug
+|   |   |   ├── _global.pug
+|   |   |   └── _reset.pug
+|   |   ├── layout/
+|   |   |   ├── _footer.pug
+|   |   |   ├── _header.pug
+|   |   |   ├── _main.pug
+|   |   |   └── _social.pug
+|   |   ├── module/
+|   |   ├── state/
+|   |   ├── theme/
+|   |   └── index.css
+|   ├── img/
 |   ├── includes/
-|   |   ├── footer.pug
-|   |   └── header.pug
+|   |   ├── _about.pug
+|   |   ├── _footer.pug
+|   |   ├── _header.pug
+|   |   ├── _home.pug
+|   |   ├── _portfolio.pug
+|   |   ├── _skills.pug
+|   |   └── _social.pug
+|   ├── js/
+|   |   └── analytics.pug
 |   ├── layouts/
 |   |   └── default.pug
+|   ├── CNAME
 |   └── index.pug
+├── .editorconfig
 ├── .gitignore
-├── browserlist 
 ├── gulpfile.js
 ├── package.json
+├── bs-config.json
 └── yarn.lock
 ```

@@ -1,41 +1,44 @@
 doctype html
 html(lang="pt-br")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    //-
-      Mobile browsers colloring
-      meta(name="theme-color", content="rgba(41, 128, 185, .8)")
-      meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
-      meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
-      meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Raul F. de Melo
-    //-Favicons
-    link(rel="icon" type="img/png", href="img/png/favicon-32x32.png", sizes="32x32")
-    link(rel="icon" type="img/png", href="img/png/favicon-16x16.png", sizes="16x16")
-    //-OpenGraph
-    meta(property="og:title" content="Raul Felipe de Melo")
-    meta(property="og:type" content="website")
-    meta(property="og:description" content="Desenvoledor front-end")
-    meta(property="og:url" content="http://rauldemelo.com.br")
-    meta(property="og:image" content="http://rauldemelo.com.br/img/raul.jpg")
-    //- Twitter cards
-    meta(name="twitter:card" content="summary")
-    meta(name="twitter:title" content="Raul Felipe de Melo")
-    meta(name="twitter:description" content="Desenvolvedor Front-end")
-    meta(name="twitter:url" content="http://rauldemelo.com.br")
-    meta(name="twitter:image" content="http://rauldemelo.com.br/img/raul.jpg")
-    //- Css
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		//-
+			Mobile browsers colloring
+			meta(name="theme-color", content="rgba(41, 128, 185, .8)")
+			meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
+			meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
+			meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Raul F. de Melo
+		//-Favicons
+		link(rel="icon" type="img/png", href="img/png/favicon-32x32.png", sizes="32x32")
+		link(rel="icon" type="img/png", href="img/png/favicon-16x16.png", sizes="16x16")
+		//-OpenGraph
+		meta(property="og:title" content="Raul Felipe de Melo")
+		meta(property="og:type" content="website")
+		meta(property="og:description" content="Desenvoledor front-end")
+		meta(property="og:url" content="http://rauldemelo.com.br")
+		meta(property="og:image" content="http://rauldemelo.com.br/img/raul.jpg")
+		//- Twitter cards
+		meta(name="twitter:card" content="summary")
+		meta(name="twitter:title" content="Raul Felipe de Melo")
+		meta(name="twitter:description" content="Desenvolvedor Front-end")
+		meta(name="twitter:url" content="http://rauldemelo.com.br")
+		meta(name="twitter:image" content="http://rauldemelo.com.br/img/raul.jpg")
+		//- Css
+		link(rel="stylesheet", href="index.min.css")
 
-  body
+	body
 
-    include includes/menu.pug
+		include includes/_header.pug
 
-    //-
-      main.main
-        include includes/home.pug
-        include includes/about.pug
-        include includes/skills.pug
-        include includes/portfolio.pug
+		main.main
+			|  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nostrum in earum repellendus ipsam fugiat ab deleniti illum laboriosam natus quaerat blanditiis, alias, similique necessitatibus suscipit labore, reiciendis eaque exercitationem vel quibusdam aliquid dolore fugit quidem. Consequuntur rerum, blanditiis dolores.
+			include includes/_social.pug
+		//-
+			include includes/_home.pug
+			include includes/_about.pug
+			include includes/_skills.pug
+			include includes/_portfolio.pug
 
-    include includes/footer.pug
+		include includes/_footer.pug

@@ -9,9 +9,8 @@
 @import './layout/_social.css';
 @import './layout/_footer.css';
 
-
 /*Module*/
-
+@import './module/_portfolio.css';
 
 /*State*/
 

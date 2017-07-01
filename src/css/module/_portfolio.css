@@ -1,0 +1,7 @@
+@import './card-project/_card.css';
+.portfolio__container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}

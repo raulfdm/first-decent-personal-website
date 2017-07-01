@@ -1,0 +1,25 @@
+.portfolio__card__header {
+	padding: 1rem .5rem 0;
+	display: flex;
+}
+
+.portfolio__card__header__title,
+.portfolio__card__header__date {
+	display: inline-block;
+}
+
+.portfolio__card__header__date{
+	font-weight: lighter;
+	margin-left: auto;
+}
+
+.portfolio__card__header__title__link {
+	text-decoration: none;
+	color: var(--contrast-color);
+	font-family: inherit;
+	font-weight: bold;
+}
+
+.portfolio__card__header__title__link .fa {
+	margin-left: .3125rem;
+}

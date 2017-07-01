@@ -10,8 +10,10 @@
 @import './layout/_footer.css';
 
 /*Module*/
-@import './module/_portfolio.css';
+@import './module/_home.css';
+@import './module/_about.css';
 @import './module/_skills.css';
+@import './module/_portfolio.css';
 
 /*State*/
 

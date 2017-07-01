@@ -1,5 +1,6 @@
 .skills{
 	background-color: var(--secondary-color);
+	min-height: 25rem;
 }
 
 .skills__container{

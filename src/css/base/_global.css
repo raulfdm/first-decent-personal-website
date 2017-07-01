@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Megrim|Nixie+One|Raleway');
-
-*{
+* {
 	box-sizing: border-box;
 }
 
@@ -26,12 +25,12 @@ h6 {
 	font-weight: bold;
 }
 
-p{
+p {
 	line-height: 1.3rem;
 }
 
 .main__section {
-	padding: 1.5rem;
+	padding: 4rem;
 }
 
 .section-title {

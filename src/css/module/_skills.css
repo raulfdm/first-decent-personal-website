@@ -1,0 +1,35 @@
+.skills{
+	background-color: var(--secondary-color);
+}
+
+.skills__container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	flex-grow: 1;
+}
+
+.skills__group{
+	max-width: 180px;
+	padding: 1rem;
+}
+
+.skills__group__title{
+	margin-bottom: .3125rem;
+	color: var(--contrast-color);
+	font-weight: bold;
+}
+
+.skills__group__skill-list{
+
+}
+.skills_group__skill-list__item::before{
+content: '✓ '
+}
+
+
+@media screen and (min-width: 983px){
+	.skills__container{
+		justify-content: center;
+	}
+}

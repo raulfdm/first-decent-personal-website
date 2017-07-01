@@ -6,15 +6,7 @@
 	align-items: center;
 	color: var(--primary-color);
 	background-color: var(--secondary-color);
-	padding: 1.5rem 0;
 }
-
-.social__title {
-	font-size: 2.5rem;
-	margin: 0 0 1rem 0;
-}
-
-.social__list {}
 
 .social__list__item {
 	display: inline-block;
@@ -30,10 +22,4 @@
 .social__list__item__link {
 	text-decoration: none;
 	color: inherit;
-}
-
-@media screen and (max-width: 776px) {
-	.social__title {
-		font-size: 1.8rem;
-	}
 }

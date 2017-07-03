@@ -1,0 +1,25 @@
+{
+	"projects":[
+		{
+			"name": "Blackhare Boilerplate",
+			"url": "https://github.com/raulfdm/blackhare-boilerplate",
+			"date": "10/06/2017",
+			"description": "Every time when I need to create an web project (without any js framework), I use to save some gists containing boilerplate files like gulpfile with all the tasks to optimize CSS, JS, HTML, images, live reload server also folder structure that is the same in all my project. So, I decide to create a Command-line user Interface (CLI) to generate this file easily.",
+			"technologies": ["NodeJS", "Javascript", "Typescript", "Travis"]
+		},
+		{
+			"name": "virtual-receipt",
+			"url": "https://github.com/raulfdm/virtual-receipt",
+			"date": "30/04/2017",
+			"description": "I use to control my expanses on Mobills (a personal finance application). So, every time when I go shopping I create an expanse with the total value. However, personally I prefer save what I bought as well, even thought the application doesn't have a specific field for it, only more information field. Therefore, I write manually on some notepad each item and it value, copy this information and paste into it field.",
+			"technologies": ["HTML", "Javascript", "CSS", "BulmaCSS", "ClipboardJS", "Local Storage"]
+		},
+		{
+			"name": "tibia-api",
+			"url": "https://github.com/raulfdm/tibia-apis",
+			"date": "10/02/2017",
+			"description": "Unfortunally, Cipsoft doens't provide an API to get any information about Tibia Chararacters. So, I've create this API which recieves a POST method with a name in body content and make a requisition to Tibia website to consult all the informations about this character. The API read the result and return an object with all informations.",
+			"technologies": ["NodeJS", "Express"]
+		}
+	]
+}

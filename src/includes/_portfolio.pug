@@ -1,19 +1,17 @@
-section.portfolio.main__section
+section#portfolio.portfolio.main__section
 	h2.section-title.portfolio__title Portfolio
-	div.portfolio__container
-		div.portfolio__card
-			div.portfolio__card__header
-				p.portfolio__card__header__title
-					a.portfolio__card__header__title__link(href="#") Lorem ipsum
-						i.fa.fa-external-link(aria-hidden="true")
-				p.portfolio__card__header__date 17/10/2016
-			div.portfolio__card__body
-				p.portfolio__card__body__description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptate iure quidem eius ullam, tenetur aspernatur officiis eaque officia recusandae.
-			div.portfolio__card__footer
-				p.portfolio__card__footer__title Technologies
-				div.portfolio__card__footer__content
-					p.portfolio__card__footer__content__badge  NodeJS
-					p.portfolio__card__footer__content__badge  Javascript
-					p.portfolio__card__footer__content__badge  HTML
-					p.portfolio__card__footer__content__badge  CSS
-					p.portfolio__card__footer__content__badge  Heroku
+	div.portfolio__container.container
+		for project in projects
+			div.portfolio__card
+				div.portfolio__card__header
+					p.portfolio__card__header__title
+						a.portfolio__card__header__title__link(href=project.url target="_blank")=project.name
+							i.fa.fa-external-link(aria-hidden="true")
+					p.portfolio__card__header__date=project.date
+				div.portfolio__card__body
+					p.portfolio__card__body__description=project.description
+				div.portfolio__card__footer
+					p.portfolio__card__footer__title Technologies
+					div.portfolio__card__footer__content
+						for technology in project.technologies
+							p.portfolio__card__footer__content__badge=technology

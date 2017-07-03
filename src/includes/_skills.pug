@@ -1,47 +1,9 @@
-section.skills.main__section
+section#skills.skills.main__section
 	h2.section-title.skills__title Skills
-	div.skills__container
-		div.skills__group
-			p.skills__group__title Libraries
-			ul.skills_group__skill-list
-				li.skills_group__skill-list__item Babel JS
-				li.skills_group__skill-list__item Jasmine
-				li.skills_group__skill-list__item jQuery
-				li.skills_group__skill-list__item MomentJS
-		div.skills__group
-			p.skills__group__title Client-side
-			ul.skills_group__skill-list
-				li.skills_group__skill-list__item CSS
-				li.skills_group__skill-list__item HTML
-				li.skills_group__skill-list__item Javascript
-				li.skills_group__skill-list__item PostCSS
-				li.skills_group__skill-list__item Sass
-				li.skills_group__skill-list__item SEO
-		div.skills__group
-			p.skills__group__title Server-side
-			ul.skills_group__skill-list
-				li.skills_group__skill-list__item Android
-				li.skills_group__skill-list__item NodeJS
-				li.skills_group__skill-list__item SQL Oracle
-		div.skills__group
-			p.skills__group__title Frameworks
-			ul.skills_group__skill-list
-				li.skills_group__skill-list__item Angular2
-				li.skills_group__skill-list__item Bootstrap
-				li.skills_group__skill-list__item MaterializeCSS
-		div.skills__group
-			p.skills__group__title Tooling
-			ul.skills_group__skill-list
-				li.skills_group__skill-list__item GIT
-				li.skills_group__skill-list__item Gulp
-				li.skills_group__skill-list__item NPM/Yarn
-				li.skills_group__skill-list__item Photoshop
-				li.skills_group__skill-list__item SVN
-		div.skills__group
-			p.skills__group__title Patterns and Techniques
-			ul.skills_group__skill-list
-				li.skills_group__skill-list__item OOP
-				li.skills_group__skill-list__item MVC
-				li.skills_group__skill-list__item SEO
-				li.skills_group__skill-list__item Responsive First
-				li.skills_group__skill-list__item Funct. Progr.
+	div.skills__container.container
+			for ability in abilities
+				div.skills__group
+					p.skills__group__title=ability.title
+					ul.skills_group__skill-list
+						for x in ability.skills
+							li.skills_group__skill-list__item=x

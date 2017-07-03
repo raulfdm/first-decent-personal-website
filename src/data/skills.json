@@ -1,0 +1,27 @@
+{
+	"abilities": [{
+			"title": "Libraries",
+			"skills": ["Babel JS", "Jasmine", "jQuery", "MomentJS"]
+		},
+		{
+			"title": "Client-side",
+			"skills": ["CSS", "HTML", "Javascript", "PostCSS", "SASS"]
+		},
+		{
+			"title": "Server-side",
+			"skills": ["Android", "MongoDB", "NodeJS", "SQL Oracle"]
+		},
+		{
+			"title": "Framework",
+			"skills": ["Angular2", "Bootstrap", "MaterializeCSS"]
+		},
+		{
+			"title": "Tooling",
+			"skills": ["Git", "Gulp", "NPM/Yarn", "Photshop","SVN"]
+		},
+		{
+			"title": "Patterns and Techniques",
+			"skills": ["OOP", "MVC", "SEO", "Responsive First","Functional Progr."]
+		}
+	]
+}

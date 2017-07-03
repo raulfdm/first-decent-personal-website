@@ -3,6 +3,9 @@
 	display: flex;
 }
 
+.portfolio__card__header__title{
+	margin-right: .5rem;
+}
 .portfolio__card__header__title,
 .portfolio__card__header__date {
 	display: inline-block;

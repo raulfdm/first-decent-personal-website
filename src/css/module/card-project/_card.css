@@ -1,16 +1,14 @@
 @import './_card-header.css';
 @import './_card-body.css';
 @import './_card-footer.css';
-
 .portfolio__card {
-	width: 320px;
+	width: 100%;
 	margin: .5rem;
 	border: 1px solid #eee;
 }
 
-@media screen and (max-width:719px) {
+@media screen and (min-width:892px) {
 	.portfolio__card {
-		width: 80%;
-		max-width: 450px;
+		max-width: 350px;
 	}
 }

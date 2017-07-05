@@ -1,25 +1,49 @@
 {
-	"projects":[
-		{
+	"projects": [{
 			"name": "Blackhare Boilerplate",
 			"url": "https://github.com/raulfdm/blackhare-boilerplate",
 			"date": "10/06/2017",
-			"description": "Every time when I need to create an web project (without any js framework), I use to save some gists containing boilerplate files like gulpfile with all the tasks to optimize CSS, JS, HTML, images, live reload server also folder structure that is the same in all my project. So, I decide to create a Command-line user Interface (CLI) to generate this file easily.",
+			"description": "Command-line user Interface (CLI) to generate a boilerplate for static web pages.",
 			"technologies": ["NodeJS", "Javascript", "Typescript", "Travis"]
 		},
 		{
 			"name": "virtual-receipt",
 			"url": "https://github.com/raulfdm/virtual-receipt",
 			"date": "30/04/2017",
-			"description": "I use to control my expanses on Mobills (a personal finance application). So, every time when I go shopping I create an expanse with the total value. However, personally I prefer save what I bought as well, even thought the application doesn't have a specific field for it, only more information field. Therefore, I write manually on some notepad each item and it value, copy this information and paste into it field.",
-			"technologies": ["HTML", "Javascript", "CSS", "BulmaCSS", "ClipboardJS", "Local Storage"]
+			"description": "An easy way to create an online receipt.",
+			"technologies": ["BulmaCSS", "ClipboardJS", "Gulp", "HTML", "Javascript",
+				"Local Storage"
+			]
+		},
+		{
+			"name": "online-cv",
+			"url": "https://github.com/raulfdm/cv",
+			"date": "28/02/2017",
+			"description": "Online curriculum - Responsive and printable! ",
+			"technologies": ["BabelJS", "Gulp", "Javascript", "PostCSS", "Pug"]
 		},
 		{
 			"name": "tibia-api",
-			"url": "https://github.com/raulfdm/tibia-apis",
+			"url": "https://github.com/raulfdm/tibia-api",
 			"date": "10/02/2017",
-			"description": "Unfortunally, Cipsoft doens't provide an API to get any information about Tibia Chararacters. So, I've create this API which recieves a POST method with a name in body content and make a requisition to Tibia website to consult all the informations about this character. The API read the result and return an object with all informations.",
-			"technologies": ["NodeJS", "Express"]
+			"description": "API Rest to check status about Tibia characteres.",
+			"technologies": ["NodeJS", "Express", "Heroku"]
+		},
+		{
+			"name": "taco-api",
+			"url": "https://github.com/raulfdm/taco-api",
+			"date": "10/02/2017",
+			"description": "Nutricional Food Information API Rest - based on TACO - Tabela Brasileira de Composição de Alimentos.",
+			"technologies": ["NodeJS", "ExpressJS", "Heroku", "MongoDB"]
+		},
+		{
+			"name": "controle-ponto",
+			"url": "https://github.com/raulfdm/controle-ponto",
+			"date": "16/07/2016",
+			"description": "An easy way to control your worked time",
+			"technologies": ["BabelJS", "CSS", "Firebase", "Gulp", "HTML",
+				"Javascript (ES6)", "_lodash", "MaterializeCSS", "SASS", "SystemJS"
+			]
 		}
 	]
 }

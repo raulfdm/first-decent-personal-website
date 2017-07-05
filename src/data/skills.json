@@ -17,11 +17,11 @@
 		},
 		{
 			"title": "Tooling",
-			"skills": ["Git", "Gulp", "NPM/Yarn", "Photshop","SVN"]
+			"skills": ["Git", "Gulp", "NPM/Yarn", "Photshop", "SVN"]
 		},
 		{
 			"title": "Patterns and Techniques",
-			"skills": ["OOP", "MVC", "SEO", "Responsive First","Functional Progr."]
+			"skills": ["OOP", "MVC", "SEO", "Responsive First", "Functional Progr."]
 		}
 	]
 }

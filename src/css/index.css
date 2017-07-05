@@ -6,14 +6,14 @@
 /*Layout*/
 @import './layout/_header.css';
 @import './layout/_main.css';
-@import './layout/_social.css';
 @import './layout/_footer.css';
 
 /*Module*/
-@import './module/_home.css';
 @import './module/_about.css';
-@import './module/_skills.css';
+@import './module/_home.css';
 @import './module/_portfolio.css';
+@import './module/_skills.css';
+@import './module/_social.css';
 
 /*State*/
 @import './state/_transparency.css';

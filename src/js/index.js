@@ -1,18 +1,22 @@
 $(document).ready(function () {
-	let scrollPosition = 0;
+
 	const $window = $(window)
 	const $menuItems = $('.header__menu__list__item__link')
+
+	let scrollPosition = 0
+
 	const handleScroll = () => {
 		const actualScrollPosition = $window.scrollTop();
-		if (actualScrollPosition === 0) {
-			handleHeaderStates.transparencyOn()
-		} else {
-			handleHeaderStates.transparencyOff()
-		}
 
-		if (actualScrollPosition < scrollPosition) {
+		if (actualScrollPosition === 0)
+			handleHeaderStates.transparencyOn()
+		else
+			handleHeaderStates.transparencyOff()
+
+
+		if (actualScrollPosition < scrollPosition)
 			handleHeaderStates.show()
-		} else
+		else
 			handleHeaderStates.hide()
 
 		scrollPosition = actualScrollPosition;
@@ -20,7 +24,6 @@ $(document).ready(function () {
 
 	const handleHeaderStates = {
 		$header: $('.header'),
-		_idTimeOut: '',
 		hide() {
 			this.$header.addClass('hidden')
 		},
@@ -48,14 +51,14 @@ $(document).ready(function () {
 		deleteSpeed: 50,
 		deleteDelay: 2000,
 		loopDelay: 2000
-		/*startDelay: 250,
-		loopDelay: 4000*/
 	});
 
 
 	$('html').smoothScroll(400);
+
 	$window.scroll(handleScroll)
-	$menuItems.click(function () {
+
+	$menuItems.click(() => {
 		setTimeout(function () {
 			handleHeaderStates.hide()
 		}, 500);

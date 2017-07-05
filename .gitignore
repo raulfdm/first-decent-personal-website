@@ -2,7 +2,6 @@
 node_modules/
 .publish/
 dist/
-**/*.css
 
 ## arquivos
 npm-debug.log

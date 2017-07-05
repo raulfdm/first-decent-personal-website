@@ -1,40 +1,49 @@
 doctype html
 html(lang="pt-br")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        // Mobile browsers colloring
-        meta(name="theme-color", content="rgba(41, 128, 185, .8)")
-        meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
-        meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Raul F. de Melo
-        //Favicons
-        link(rel="icon" type="img/png", href="img/png/favicon-32x32.png", sizes="32x32")
-        link(rel="icon" type="img/png", href="img/png/favicon-16x16.png", sizes="16x16")
-        //OpenGraph
-        meta(property="og:title" content="Raul Felipe de Melo")
-        meta(property="og:type" content="website")
-        meta(property="og:description" content="Desenvoledor front-end")
-        meta(property="og:url" content="http://rauldemelo.com.br")
-        meta(property="og:image" content="http://rauldemelo.com.br/img/raul.jpg")
-        //Twitter cards
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		//-
+			Mobile browsers colloring
+			meta(name="theme-color", content="rgba(41, 128, 185, .8)")
+			meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
+			meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
+			meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Raul F. de Melo
+		//-Favicons
+		link(rel="icon" type="img/png", href="img/png/favicon-32x32.png", sizes="32x32")
+		link(rel="icon" type="img/png", href="img/png/favicon-16x16.png", sizes="16x16")
+		//-OpenGraph
+		meta(property="og:title" content="Raul Felipe de Melo")
+		meta(property="og:type" content="website")
+		meta(property="og:description" content="Front-end/Javascript Developer")
+		meta(property="og:url" content="http://rauldemelo.com.br")
+		meta(property="og:image" content="http://rauldemelo.com.br/img/raul.jpg")
+		//- Twitter cards
 		meta(name="twitter:card" content="summary")
 		meta(name="twitter:title" content="Raul Felipe de Melo")
-		meta(name="twitter:description" content="Desenvolvedor Front-end")
+		meta(name="twitter:description" content="Front-end/Javascript Developer")
 		meta(name="twitter:url" content="http://rauldemelo.com.br")
 		meta(name="twitter:image" content="http://rauldemelo.com.br/img/raul.jpg")
-    //Css
-    //build:css assets/css/first.min.css
-    link(rel="preload" as="style" href="assets/css/above-the-fold.css" onload="this.rel='stylesheet'")
-    noscript
-        link(rel="stylesheet" href="assets/css/above-the-fold.css")
-    //endbuild
-    body
-        script(src='scripts/analytics.js')
-        include includes/menu.pug
-        include includes/home.pug
-        include includes/about.pug
-        include includes/skills.pug
-        include includes/portfolio.pug
-        include includes/footer.pug
+		//- Css
+		link(rel="stylesheet", href="index.min.css")
+		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+
+	body
+
+		include includes/_header.pug
+
+		main.main
+			include includes/_home.pug
+			include includes/_about.pug
+			include includes/_skills.pug
+			include includes/_portfolio.pug
+			include includes/_social.pug
+
+		include includes/_footer.pug
+
+		script
+			include js/analytics.js
+		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/typeit/4.4.0/typeit.min.js')
+		script(src='index.min.js')

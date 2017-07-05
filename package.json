@@ -4,27 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prd-server": "yarn gulp server",
-    "dist-server": "yarn gulp server-dist",
+    "deploy": "concurrently 'yarn build' 'yarn gulp deploy'",
     "build": "yarn gulp build",
-    "deploy": "yarn gulp deploy"
+    "start": "yarn lite-server",
+    "watch": "yarn gulp watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "browser-sync": "^2.17.5",
+    "autoprefixer": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "concurrently": "^3.5.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
-    "gulp-cssmin": "^0.1.7",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-data": "^1.2.1",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-postcss": "^7.0.0",
     "gulp-pug": "^3.3.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-usemin": "^0.3.25"
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.6.0",
+    "lite-server": "^2.3.0",
+    "postcss-import": "^10.0.0"
+  },
+  "dependencies": {
+    "merge-json": "^0.1.0-b.3"
   }
 }

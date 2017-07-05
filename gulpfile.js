@@ -1,106 +1,85 @@
-const gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    babel = require('gulp-babel'),
-    browser = require('browser-sync'),
-    usemin = require('gulp-usemin'),
-    cssmin = require('gulp-cssmin'),
-    imagemin = require('gulp-imagemin'),
-    htmlmin = require('gulp-htmlmin'),
-    autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    ghPages = require('gulp-gh-pages'),
-    clean = require('gulp-clean')
-pug = require('gulp-pug');
+const autoprefixer = require('autoprefixer')
+const babel = require('gulp-babel')
+const clean = require('gulp-clean')
+const concat = require('gulp-concat')
+const cssnano = require('gulp-cssnano')
+const data = require('gulp-data')
+const ghPages = require('gulp-gh-pages')
+const gulp = require('gulp')
+const imagemin = require('gulp-imagemin')
+const jsmin = require('gulp-jsmin')
+const mergeJson = require('merge-json')
+const postcss = require('gulp-postcss')
+const postImport = require('postcss-import')
+const pug = require('gulp-pug')
+const rename = require('gulp-rename')
+const sequence = require('gulp-sequence')
+const sourceMaps = require('gulp-sourcemaps')
 
-gulp.task('build', ['clean'], function () {
-    gulp.start('sass', 'imagemin', 'usemin', 'copyFiles');
+gulp.task('build', callback =>
+	sequence('clean', ['css', 'js', 'pug', 'image', 'copy-files'])(callback))
+
+gulp.task('clean', () => {
+	return gulp.src('dist/')
+		.pipe(clean())
 })
 
-gulp.task('pug', function () {
-    return gulp
-        .src('src/index.pug')
-        .pipe(pug({}))
-        .pipe(gulp.dest('dist/'))
+gulp.task('copy-files', () => {
+	return gulp.src('src/CNAME')
+		.pipe(gulp.dest('dist/'))
 })
 
-gulp.task('imagemin', function () {
-    return gulp
-        .src('src/img/**/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'));
-});
+gulp.task('css', () => {
+	gulp.src('src/css/index.css')
+		.pipe(sourceMaps.init())
+		.pipe(postcss([autoprefixer(), postImport()]))
+		.pipe(cssnano())
+		.pipe(rename({
+			suffix: '.min'
+		}))
+		.pipe(sourceMaps.write('.'))
+		.pipe(gulp.dest('dist/'))
+})
 
-gulp.task('usemin', function () {
-    return gulp
-        .src('src/**/*.html')
-        .pipe(usemin({
-            'html': [htmlmin({collapseWhitespace: true, removeComments: true})],
-            'js': [
-                babel({presets: ['es2015']}),
-                uglify
-            ],
-            'jsAttributes': {
-                async: false
-            },
-            'css': [autoprefixer, cssmin]
-        }))
-        .pipe(gulp.dest('dist/'))
-});
+gulp.task('deploy', sequence('build', 'pages'))
 
-gulp.task('copyFiles', function () {
-    gulp
-        .src('src/scripts/libs/**/*')
-        .pipe(gulp.dest('dist/scripts/libs/'));
-    gulp
-        .src('src/CNAME')
-        .pipe(gulp.dest('dist/'))
-});
+gulp.task('image', () => {
+	return gulp.src('./src/img/**/*')
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/img/'))
+})
 
-gulp.task('clean', function () {
-    return gulp
-        .src('dist/')
-        .pipe(clean());
-});
+gulp.task('js', () => {
+	return gulp.src(['./src/js/vendor/smooths-scroll.min.js',
+			'./src/js/index.js'
+		])
+		.pipe(sourceMaps.init())
+		.pipe(babel())
+		.pipe(concat('index.min.js'))
+		.pipe(sourceMaps.write())
+		.pipe(gulp.dest('./dist/'))
+})
 
-gulp.task('sass', function () {
-    gulp
-        .src('src/sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('src/css/'));
-});
+gulp.task('pages', () => {
+	return gulp.src('dist/**/*')
+		.pipe(ghPages())
+})
 
-gulp.task('server', function () {
+gulp.task('pug', () => {
+	return gulp.src('src/index.pug')
+		.pipe(data(() => {
+			let result = mergeJson.merge(require('./src/data/projects.json'),
+				require('./src/data/about.json'))
+			result = mergeJson.merge(result, require('./src/data/skills.json'))
 
-    browser.init({
-        server: {
-            baseDir: 'src/'
-        }
-    });
+			return result
+		}))
+		.pipe(pug({}))
+		.pipe(gulp.dest('dist/'))
+})
 
-    //Change Listeners
-    gulp.watch('src/sass/**/*.scss', ['sass']);
-    gulp
-        .watch('src/**/*.*')
-        .on('change', browser.reload);
-});
-
-gulp.task('deploy', function () {
-    return gulp
-        .src('./dist/**/*')
-        .pipe(ghPages());
-});
-
-gulp.task('server-dist', function () {
-
-    browser.init({
-        server: {
-            baseDir: 'dist/'
-        }
-    });
-
-    //Change Listeners
-    gulp.watch('dist/sass/**/*.scss', ['sass']);
-    gulp
-        .watch('dist/**/*.*')
-        .on('change', browser.reload);
-});
+gulp.task('watch', () => {
+	gulp.watch('src/**/*.pug', ['pug'])
+	gulp.watch('src/**/*.css', ['css'])
+	gulp.watch('src/**/*.js', ['js'])
+})

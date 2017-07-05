@@ -1,0 +1,19 @@
+.home__photo {
+	width: 100%;
+	height: 100vh;
+	background-image: url("img/background.jpg");
+	background-repeat: no-repeat center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	filter: grayscale(80%);
+}
+
+.home__title {
+	text-align: center;
+	font-size: 4rem;
+	font-family: 'Megrim', cursive;
+	color: white;
+	font-weight: bold;
+}

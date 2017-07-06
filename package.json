@@ -27,8 +27,8 @@
     "gulp-postcss": "^7.0.0",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.1.2",
     "gulp-sequence": "^0.4.6",
-    "gulp-sourcemaps": "^2.6.0",
     "lite-server": "^2.3.0",
     "postcss-import": "^10.0.0"
   },

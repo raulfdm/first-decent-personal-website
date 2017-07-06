@@ -63,7 +63,7 @@
 	}
 	.header__menu {
 		margin-left: 0;
-		width: 90%;
+		width: 100%;
 	}
 	.header__menu__list {
 		display: flex;
@@ -73,12 +73,11 @@
 	}
 	.header__menu__list__item {
 		font-size: .8rem;
+		width: 25%;
 	}
 	.header__menu__list__item__link {
 		width: 100%;
 		align-self: center;
-		margin-left: .8rem;
-		margin-right: .8rem;
 		padding: 1rem 0;
 	}
 }

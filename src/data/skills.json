@@ -1,27 +1,25 @@
-{
-	"abilities": [{
-			"title": "Libraries",
-			"skills": ["Babel JS", "Jasmine", "jQuery", "MomentJS"]
-		},
-		{
-			"title": "Client-side",
-			"skills": ["CSS", "HTML", "Javascript", "PostCSS", "SASS"]
-		},
-		{
-			"title": "Server-side",
-			"skills": ["Android", "MongoDB", "NodeJS", "SQL Oracle"]
-		},
-		{
-			"title": "Framework",
-			"skills": ["Angular2", "Bootstrap", "MaterializeCSS"]
-		},
-		{
-			"title": "Tooling",
-			"skills": ["Git", "Gulp", "NPM/Yarn", "Photshop", "SVN"]
-		},
-		{
-			"title": "Patterns and Techniques",
-			"skills": ["OOP", "MVC", "SEO", "Responsive First", "Functional Progr."]
-		}
-	]
-}
+[{
+		"title": "Libraries",
+		"skills": ["Babel JS", "Jasmine", "jQuery", "MomentJS"]
+	},
+	{
+		"title": "Client-side",
+		"skills": ["CSS", "HTML", "Javascript (^ES6)", "PostCSS", "SASS"]
+	},
+	{
+		"title": "Server-side",
+		"skills": ["MongoDB", "NodeJS", "SQL Oracle"]
+	},
+	{
+		"title": "Framework",
+		"skills": ["Angular2", "Bootstrap", "MaterializeCSS","VueJS (v2)"]
+	},
+	{
+		"title": "Tooling",
+		"skills": ["Git", "Gulp", "NPM/Yarn", "Photshop", "SVN"]
+	},
+	{
+		"title": "Patterns and Techniques",
+		"skills": ["Method Chaning","MVC","OOP","Prototype Pattern", "SEO","Responsive First"]
+	}
+]

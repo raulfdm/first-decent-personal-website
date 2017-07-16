@@ -6,17 +6,14 @@ $(document).ready(function () {
 	let scrollPosition = 0
 
 	const handleScroll = () => {
-		const actualScrollPosition = $window.scrollTop();
+		const actualScrollPosition = $window.scrollTop()
 
-		if (actualScrollPosition === 0)
-			handleHeaderStates.transparencyOn()
-		else
+		actualScrollPosition === 0 ?
+			handleHeaderStates.transparencyOn() :
 			handleHeaderStates.transparencyOff()
 
-
-		if (actualScrollPosition < scrollPosition)
-			handleHeaderStates.show()
-		else
+		actualScrollPosition < scrollPosition ?
+			handleHeaderStates.show() :
 			handleHeaderStates.hide()
 
 		scrollPosition = actualScrollPosition;
@@ -41,6 +38,9 @@ $(document).ready(function () {
 		}
 	}
 
+	const handleURL = () => history.replaceState({}, null, '/')
+
+	/******** Confs ********/
 
 	$('.home__title').typeIt({
 		strings: ['Front-end Developer', 'Curious Guy',
@@ -51,16 +51,18 @@ $(document).ready(function () {
 		deleteSpeed: 50,
 		deleteDelay: 2000,
 		loopDelay: 2000
-	});
+	})
 
+	$('html').smoothScroll(400)
 
-	$('html').smoothScroll(400);
-
-	$window.scroll(handleScroll)
 
 	$menuItems.click(() => {
 		setTimeout(function () {
 			handleHeaderStates.hide()
 		}, 500);
 	})
+
+	$window.scroll(handleScroll)
+	/* Do not modify URL */
+	$window.on('hashchange', handleURL)
 })

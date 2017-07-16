@@ -32,7 +32,7 @@
 		"name": "taco-api",
 		"url": "https://github.com/raulfdm/taco-api",
 		"date": "10/02/2017",
-		"description": "Nutricional Food Information API Rest - based on TACO - Tabela Brasileira de Composição de Alimentos.",
+		"description": "Nutricional Food Information API Rest - based on TACO(Tabela Brasileira de Composição de Alimentos).",
 		"technologies": ["NodeJS", "ExpressJS", "Heroku", "MongoDB"]
 	},
 	{

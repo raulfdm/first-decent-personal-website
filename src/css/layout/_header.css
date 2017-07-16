@@ -45,6 +45,7 @@
 	text-decoration: none;
 	color: inherit;
 	transition: .3s all;
+	text-transform: uppercase;
 }
 
 .header__menu__list__item__link:hover {

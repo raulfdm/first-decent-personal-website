@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "yarn build && yarn gulp deploy",
+    "deploy": "yarn build && yarn gulp pages",
     "build": "yarn gulp build",
     "start": "yarn lite-server",
     "watch": "yarn gulp watch"

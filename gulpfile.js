@@ -48,8 +48,6 @@ gulp.task('css', () => {
 		.pipe(gulp.dest(DEST_FOLDER))
 })
 
-gulp.task('deploy', sequence('build', 'pages'))
-
 gulp.task('image', () => {
 	const CONFIG = {
 		progressive: true

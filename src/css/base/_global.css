@@ -29,6 +29,11 @@ p {
 	line-height: 1.3rem;
 }
 
+::selection{
+	background: var(--primary-color);
+	color: var(--secondary-color);
+}
+
 .main__section {
 	padding: 4rem 2rem;
 }

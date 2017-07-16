@@ -73,12 +73,13 @@
 		justify-content: space-around;
 	}
 	.header__menu__list__item {
-		font-size: .8rem;
-		width: 25%;
+		flex-grow: 1;
+		font-size: .7rem;
 	}
 	.header__menu__list__item__link {
 		width: 100%;
 		align-self: center;
 		padding: 1rem 0;
+		margin: 0 .1rem;
 	}
 }

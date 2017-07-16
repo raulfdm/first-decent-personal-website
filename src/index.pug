@@ -1,58 +1,62 @@
-doctype html
-html(lang="pt-br")
-	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		//-
-			Mobile browsers colloring
-			meta(name="theme-color", content="rgba(41, 128, 185, .8)")
-			meta(name="apple-mobile-web-app-status-bar-style", content="rgba(41, 128, 185, .8)")
-			meta(name="msapplication-navbutton-color", content="rgba(41, 128, 185, .8)")
-			meta(http-equiv="X-UA-Compatible", content="ie=edge")
-		title Raul F. de Melo
-		//-Favicons
-		link(rel="icon" type="img/png", href="img/png/favicon-32x32.png", sizes="32x32")
-		link(rel="icon" type="img/png", href="img/png/favicon-16x16.png", sizes="16x16")
-		//-OpenGraph
-		meta(property="og:title" content="Raul Felipe de Melo")
-		meta(property="og:type" content="website")
-		meta(property="og:description" content="Front-end/Javascript Developer")
-		meta(property="og:url" content="http://rauldemelo.com.br")
-		meta(property="og:image" content="http://rauldemelo.com.br/img/raul.jpg")
-		//- Twitter cards
-		meta(name="twitter:card" content="summary")
-		meta(name="twitter:title" content="Raul Felipe de Melo")
-		meta(name="twitter:description" content="Front-end/Javascript Developer")
-		meta(name="twitter:url" content="http://rauldemelo.com.br")
-		meta(name="twitter:image" content="http://rauldemelo.com.br/img/raul.jpg")
-		//- Css
-		if assets
-			link(rel="stylesheet", href=assets['index.min.css'])
-		else
-			link(rel="stylesheet", href='index.min.css')
+extends ./layout/default.pug
 
-		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+block title-content
+	title Raul F. de Melo
 
-	body
+block seo-content
+	- var name = "Raul Felipe de Melo";
+	- var description = "Developer and a guy who loves what he do!";
+	- var url = "https://rauldemelo.com.br";
+	- var img = `${url}/img/background.jpg`;
 
-		include includes/_header.pug
+	//-General SEO
+	meta(name="author" content=name)
+	meta(name="description" content=description)
+	meta(name="robots" content="index, nofollow")
 
-		main.main
-			include includes/_home.pug
-			include includes/_about.pug
-			include includes/_skills.pug
-			include includes/_portfolio.pug
-			include includes/_social.pug
+	//-OpenGraph
+	meta(property="og:title" content=name)
+	meta(property="og:type" content="website")
+	meta(property="og:description" content=description)
+	meta(property="og:url" content=url)
+	meta(property="og:image" content=img)
+	//- Twitter cards
+	meta(name="twitter:card" content="summary")
+	meta(name="twitter:title" content=name)
+	meta(name="twitter:description" content=description)
+	meta(name="twitter:url" content=url)
+	meta(name="twitter:image" content=img)
+
+block mobile-coloring-content
+	- var mobileColor = "rgba(88, 75, 79,.8)";
+
+	meta(name="theme-color", content=mobileColor)
+	meta(name="apple-mobile-web-app-status-bar-style", content=mobileColor)
+	meta(name="msapplication-navbutton-color", content=mobileColor)
+
+block css-content
+	if assets
+		link(rel="stylesheet", href=assets['index.min.css'])
+	else
+		link(rel="stylesheet", href='index.min.css')
+
+block body-content
+	include includes/_header.pug
+
+	main.main
+		include includes/_home.pug
+		include includes/_about.pug
+		include includes/_skills.pug
+		include includes/_portfolio.pug
+		include includes/_social.pug
 
 		include includes/_footer.pug
 
-		script
-			include js/analytics.js
-		script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/typeit/4.4.0/typeit.min.js')
+block script-content
+	script
+		include js/analytics.js
 
-		if assets
-			script(src=assets['index.min.js'])
-		else
-			script(src='index.min.js')
-
+	if assets
+		script(src=assets['index.min.js'])
+	else
+		script(src='index.min.js')

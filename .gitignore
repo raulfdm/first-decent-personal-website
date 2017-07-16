@@ -1,8 +1,9 @@
-##pastas
+## Folders
 node_modules/
 .publish/
 dist/
 
-## arquivos
+## Files
 npm-debug.log
 .yarnclean
+src/data/rev-manifest.json

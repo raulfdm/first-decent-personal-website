@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "concurrently 'yarn build' 'yarn gulp deploy'",
+    "deploy": "yarn build && yarn gulp deploy",
     "build": "yarn gulp build",
     "start": "yarn lite-server",
     "watch": "yarn gulp watch"
@@ -14,7 +14,6 @@
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-preset-env": "^1.5.2",
-    "concurrently": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
@@ -28,6 +27,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.1.2",
+    "gulp-rev-delete-original": "^0.2.3",
     "gulp-sequence": "^0.4.6",
     "lite-server": "^2.3.0",
     "postcss-import": "^10.0.0"

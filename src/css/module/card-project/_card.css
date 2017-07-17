@@ -3,12 +3,13 @@
 @import './_card-footer.css';
 .portfolio__card {
 	width: 100%;
+	max-width: 37.5rem;
 	margin: .5rem;
 	border: 1px solid #eee;
 }
 
 @media screen and (min-width:892px) {
 	.portfolio__card {
-		max-width: 300px;
+		max-width: 47%;
 	}
 }

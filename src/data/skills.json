@@ -1,7 +1,4 @@
-[{
-		"title": "Libraries",
-		"skills": ["Babel JS", "Jasmine", "jQuery", "MomentJS"]
-	},
+[
 	{
 		"title": "Client-side",
 		"skills": ["CSS", "HTML", "Javascript (^ES6)", "PostCSS", "SASS"]
@@ -9,6 +6,10 @@
 	{
 		"title": "Server-side",
 		"skills": ["MongoDB", "NodeJS", "SQL Oracle"]
+	},
+	{
+		"title": "Libraries",
+		"skills": ["Babel JS", "Jasmine", "jQuery", "MomentJS","Pug"]
 	},
 	{
 		"title": "Framework",

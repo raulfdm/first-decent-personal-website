@@ -3,18 +3,18 @@ section#contact.contact.main__section
 	form.contact__form
 		div.contact__form__input-container
 			label.contact__form__input-container__label Name
-			input.contact__form__input-container__input.js-form__name(type="text")
+			input.contact__form__input-container__input.js-form__name(type="text" required)
 		div.contact__form__input-container
 			label.contact__form__input-container__label Email
-			input.contact__form__input-container__input.js-form__email(type="email")
+			input.contact__form__input-container__input.js-form__email(type="email" required)
 		div.contact__form__input-container
 			label.contact__form__input-container__label Subject
-			input.contact__form__input-container__input.js-form__subject(type="email")
+			input.contact__form__input-container__input.js-form__subject(type="email" required)
 		div.contact__form__input-container
-			label.contact__form__input-container__label Message
+			label(required).contact__form__input-container__label Message
 			textarea.contact__form__input-container__input.contact__form__input-container__input--textarea.js-form__message
-		//div.g-recaptcha(data-sitekey="6Ld8YCkUAAAAAMzEHaFq2K3f9vPYLfWx4JF-Rm0Q" data-callback="enableButton" async defer)
 		//button.contact__form__input-container__submit.is-disabled(type="submit" data-key="") Send
 			i.fa.fa-send
-		button.g-recaptcha(data-sitekey="6LfxYykUAAAAALVAFyBMLq4WD5xExENrFCk7YDam" data-callback="YourOnSubmitFn") Submit
+		div#recaptcha.g-recaptcha(data-sitekey="6LfxYykUAAAAALVAFyBMLq4WD5xExENrFCk7YDam" data-callback="onSubmit" data-size="invisible")
+		button.contact__form__input-container__submit.js-form__submit Submit
 

@@ -1,66 +1,67 @@
-$( document ).ready( function () {
-  const $window = $( window )
-  const $menuItems = $( '.header__menu__list__item__link' )
+$(document).ready(function () {
 
-  let scrollPosition = 0
+	const $window = $(window)
+	const $menuItems = $('.header__menu__list__item__link')
 
-  const handleScroll = () => {
-    const actualScrollPosition = $window.scrollTop()
+	let scrollPosition = 0
 
-    actualScrollPosition === 0 ?
-      handleHeaderStates.transparencyOn() :
-      handleHeaderStates.transparencyOff()
+	const handleScroll = () => {
+		const actualScrollPosition = $window.scrollTop()
 
-    actualScrollPosition < scrollPosition ?
-      handleHeaderStates.show() :
-      handleHeaderStates.hide()
+		actualScrollPosition === 0 ?
+			handleHeaderStates.transparencyOn() :
+			handleHeaderStates.transparencyOff()
 
-    scrollPosition = actualScrollPosition
-  }
+		actualScrollPosition < scrollPosition ?
+			handleHeaderStates.show() :
+			handleHeaderStates.hide()
 
-  const handleHeaderStates = {
-    $header: $( '.header' ),
-    hide() {
-      this.$header.addClass( 'hidden' )
-    },
-    show() {
-      this.$header.removeClass( 'hidden' )
-      return this
-    },
-    transparencyOn() {
-      this.$header.addClass( 'is-transparent' )
-      return this
-    },
-    transparencyOff() {
-      this.$header.removeClass( 'is-transparent' )
-      return this
-    }
-  }
+		scrollPosition = actualScrollPosition
+	}
 
-  const handleURL = () => history.replaceState( {}, null, '/' )
+	const handleHeaderStates = {
+		$header: $('.header'),
+		hide() {
+			this.$header.addClass('hidden')
+		},
+		show() {
+			this.$header.removeClass('hidden')
+			return this
+		},
+		transparencyOn() {
+			this.$header.addClass('is-transparent')
+			return this
+		},
+		transparencyOff() {
+			this.$header.removeClass('is-transparent')
+			return this
+		}
+	}
 
-  /******** Confs ********/
+	const handleURL = () => history.replaceState({}, null, '/')
 
-  $( '.home__title' ).typeIt( {
-    strings: [ 'Front-end Developer', 'Curious Guy',
-      'Passionate About Coding'
-    ],
-    breakLines: false,
-    loop: true,
-    deleteSpeed: 50,
-    deleteDelay: 2000,
-    loopDelay: 2000
-  } )
+	/******** Confs ********/
 
-  $( 'html' ).smoothScroll( 400 )
+	$('.home__title').typeIt({
+		strings: ['Front-end Developer', 'Curious Guy',
+			'Passionate About Coding'
+		],
+		breakLines: false,
+		loop: true,
+		deleteSpeed: 50,
+		deleteDelay: 2000,
+		loopDelay: 2000
+	})
 
-  $menuItems.click( () => {
-    setTimeout( function () {
-      handleHeaderStates.hide()
-    }, 500 )
-  } )
+	$('html').smoothScroll(400)
 
-  $window.scroll( handleScroll )
-  /* Do not modify URL */
-  $window.on( 'hashchange', handleURL )
-} )
+	$menuItems.click(() => {
+		setTimeout(function () {
+			handleHeaderStates.hide()
+		}, 500)
+	})
+
+	$window.scroll(handleScroll)
+	/* Do not modify URL */
+	$window.on('hashchange', handleURL)
+})

@@ -48,6 +48,7 @@ block body-content
 		include includes/_about.pug
 		include includes/_skills.pug
 		include includes/_portfolio.pug
+		include includes/_contact.pug
 		include includes/_social.pug
 
 		include includes/_footer.pug
@@ -55,6 +56,7 @@ block body-content
 block script-content
 	script
 		include js/analytics.js
+	script(src='https://www.google.com/recaptcha/api.js')
 
 	if assets
 		script(src=assets['index.min.js'])

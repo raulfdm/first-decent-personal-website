@@ -14,19 +14,26 @@ const postImport = require('postcss-import')
 const pug = require('gulp-pug')
 const rename = require('gulp-rename')
 const revision = require('gulp-rev')
-const revisionDelete = require('gulp-rev-delete-original');
+const revisionDelete = require('gulp-rev-delete-original')
 const sequence = require('gulp-sequence')
 
 const DEST_FOLDER = 'dist/'
+const PRODUCTION = process.env.PROD
 const MANIFEST_CONFIG = {
 	merge: true,
 	manifestName: 'rev-manifest.json',
 	manifestPath: 'src/data/'
 }
 
-gulp.task('build', ['clean'], callback =>
-	sequence(['css', 'js', 'image'], ['copy-files','revision'], 'pug')(callback)
-)
+gulp.task('build', ['clean'], callback => {
+	PRODUCTION ?
+		sequence(
+			['css', 'js', 'image'], ['copy-files', 'revision'],
+			'pug')(callback) :
+		sequence(
+			['css', 'js', 'image'], ['copy-files'],
+			'pug')(callback)
+})
 
 gulp.task('clean', () => {
 	return gulp.src(DEST_FOLDER)
@@ -91,12 +98,10 @@ gulp.task('pug', () => {
 				abilities: require('./src/data/skills.json')
 			}
 
-			try {
+			if (PRODUCTION)
 				result.assets = require('./src/data/rev-manifest.json')
-			} finally {
-				return result
-			}
 
+			return result
 		}))
 		.pipe(pug({}))
 		.pipe(gulp.dest(DEST_FOLDER))

@@ -75,7 +75,9 @@ gulp.task('image', () => {
 gulp.task('js', () => {
 
 	return gulp.src(['./src/js/vendor/smooths-scroll.min.js',
-			'./src/js/index.js'
+			'./src/js/vendor/smtpjs.min.js',
+			'./src/js/index.js',
+			'./src/js/contact-form.js'
 		])
 		.pipe(babel())
 		.pipe(jsmin())
@@ -118,6 +120,6 @@ gulp.task('revision', () => {
 
 gulp.task('watch', () => {
 	gulp.watch('src/**/*.pug', ['pug'])
-	gulp.watch('src/**/*.css', ['css', 'pug'])
-	gulp.watch('src/**/*.js', ['js', 'pug'])
+	gulp.watch('src/**/*.css', ['css'])
+	gulp.watch('src/**/*.js', ['js'])
 })

@@ -50,6 +50,7 @@
 	text-transform: uppercase;
 	background-color: var(--contrast-color);
 	color: var(--secondary-color);
+	cursor: pointer;
 }
 .contact__form__input-container__submit .fa{
 	margin-left: .3125rem;

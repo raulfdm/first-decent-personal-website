@@ -75,7 +75,7 @@ gulp.task('image', () => {
 gulp.task('js', () => {
 
 	return gulp.src(['./src/js/vendor/smooths-scroll.min.js',
-			'./src/js/vendor/smtpjs.min.js',
+			'./src/js/vendor/email.min.js',
 			'./src/js/index.js',
 			'./src/js/contact-form.js'
 		])

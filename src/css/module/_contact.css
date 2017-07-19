@@ -7,6 +7,12 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.contact__form__feedback-message{
+	display: none;
+	text-align: center;
+	font-size: 1.2rem;
+}
 .contact__form__input-container{
 	display: flex;
 	flex-direction: column;
@@ -14,17 +20,19 @@
 }
 
 .contact__form__input-container__input{
+	background-color: #fff;
 	height: 2.25rem;
-	line-height: 1.5;
 	width: 100%;
-	font-size: 1rem;
+	line-height: 1.5;
 	padding: .4rem;
+	color: var(--font-color);
+	font-size: 1rem;
 	font-family: 'Raleway',sans-serif;
 	letter-spacing: .0125rem;
+	border: 1px solid var(--primary-color);
 }
 
 .contact__form__input-container__input:focus{
-	border: 2px solid var(--primary-color);
 	outline: none;
 }
 .contact__form__input-container__input--textarea{

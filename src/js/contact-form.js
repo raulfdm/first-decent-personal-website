@@ -1,56 +1,85 @@
-const submitContact = e => {
-	alert('oi')
-	console.log(e)
-	/* const data = {
-		me: "melo.raulf@gmail.com",
-		name: ,
-		subject: ,
-		email: 'devtesteapps@gmail.com',
-		.val(),
-		token: 'e2b8d5d2-cd2c-4b19-b292-db72965ff884'
-	} */
+;
+(() => {
+	emailjs.init("user_XDedmoeMTu9Eyl0FxOlTJ")
+	const $buttonSubmit = $('.js-form__submit')
 
-	/* 	try {
-			Email.send(
-				data.email,
-				data.me,
-				data.subject,
-				`email from: ${data.email}\nMensagem: \n${data.message}`, {
-					token: data.token
-				}
-			)
-		} catch (error) {
-			console.log(error)
+	const sendEmail = () => {}
+
+	const callReCaptcha = event => {
+		//grecaptcha.execute();
+		getFormValues()
+	}
+
+	const getFormValues = () => {
+		let error = ""
+
+		const data = {
+			name: $('.js-form__name').val(),
+			subject: $('.js-form__subject').val(),
+			message: $('.js-form__message').val(),
+			mailFrom: $('.js-form__email').val()
 		}
-	 */
-}
 
-const confirma = (e) => {
-	e.preventDefault()
-	if (confirm('tem certeza?')) {
-		debugger;
-		grecaptcha.execute()
-	} else {
-		alert('nao')
+		hasErrorsInForm(data)
+			.then(s => handleFeedbackMessage(true))
+			.catch(e => handleFeedbackMessage(false,e))
+
 	}
 
-}
+	const hasErrorsInForm = data => {
+		return new Promise((resolve, reject) => {
+			let errorMessage = " is required"
+			let invalidProp = ""
 
-function onSubmit(token) {
-	alert('thanks ' + document.getElementById('field').value);
-}
+			if (!data.name)
+				invalidProp = "Name"
+			else if (!data.mailFrom)
+				invalidProp = "Email"
+			else if (!data.subject)
+				invalidProp = "Subject"
+			else if (!data.message)
+				invalidProp = "Message"
 
-const getFieldValues = () => {
-	return {
-		name: $('.js-form__name').val(),
-		subject: $('.js-form__subject').val(),
-		message: $('.js-form__message').val(),
-		mailFrom: $('.js-form__email').val()
+			invalidProp ? reject(invalidProp + errorMessage) : resolve(true)
+
+		})
 	}
-}
 
-document.querySelector('.js-form__submit').addEventListener('click', confirma)
+	const handleFeedbackMessage = function(isPostive, errorMessage = "") {
+		if(!isPostive && (arguments.length !== 2 || errorMessage === ""))
+			throw new Error('Number of Arguments Invalid or error message not passed! Please, if you send "false", you must need to send second argument(error message)')
 
-function onLoad(e) {
-	console.log(e)
-}
+		const $feedbackElement = $('.contact__form__feedback-message')
+
+
+		if (isPostive) {
+			$feedbackElement.text('Message sent successfuly!').addClass('is-success')
+		}else{
+			$feedbackElement.text('*'+errorMessage).addClass('is-failure')
+		}
+	}
+
+	const formControl = {
+		fields: {
+			name: $('.js-form__name'),
+			subject: $('.js-form__subject'),
+			message: $('.js-form__message'),
+			mailFrom: $('.js-form__email')
+		},
+		getData(){
+			return Object.getOwnPropertyNames(this.fields).reduce((result, actual) => {
+				console.log(result,actual)
+				return result[actual] = this.fields[actual]
+			},{})
+		}
+	}
+
+	const handleButtonState = () => {
+
+	}
+
+	$buttonSubmit.on('click', callReCaptcha)
+	$('.contact__form').on('submit', e => e.preventDefault())
+
+	console.log(formControl.getData())
+})()

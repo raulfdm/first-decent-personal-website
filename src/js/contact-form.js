@@ -1,16 +1,17 @@
 ;
 (() => {
-	emailjs.init("user_XDedmoeMTu9Eyl0FxOlTJ")
 
 	const sendEmail = () => {
-		return new Promise((resolve, reject) => {
-			let a = 10
-			if (a == 10) {
-				resolve(true)
-			} else {
-				reject(false)
-			}
-		})
+		lockForm()
+		emailJsService(handleFormState.getData())
+			.then(success => resolve(handleFeedbackMessage.success()))
+			.then(() => handleFormState.clearData())
+	}
+
+	const emailJsService = data => {
+		emailjs.init("user_XDedmoeMTu9Eyl0FxOlTJ")
+		return emailjs.send("default_service", "contact", data);
+
 	}
 
 	const callReCaptcha = () => {
@@ -22,19 +23,15 @@
 
 		const data = handleFormState.getData()
 
-		new Promise((resolve, reject) => {
-			hasErrorsInForm(data)
-				.then(data => {
-					callReCaptcha()
-					lockForm()
-					sendEmail(data)
-				})
-				.then(success => resolve(handleFeedbackMessage.success()))
-				.then(() => handleFormState.clearData())
-				.catch(e => handleFeedbackMessage.failure(e))
-				.then(() => unlockForm())
-		})
-
+		hasErrorsInForm(data)
+			.then(data => {
+				callReCaptcha()
+			})
+			.catch(e => {
+				console.log(e)
+				handleFeedbackMessage.failure(e)
+			})
+			.then(() => unlockForm())
 	}
 
 	const lockForm = () => {
@@ -125,5 +122,5 @@
 	handleButtonState.clickEvent(handleContactForm)
 
 	$('.contact__form').on('submit', e => e.preventDefault())
-
+	document.getElementsByClassName('g-recaptcha')[0].setAttribute('data-callback',sendEmail)
 })()

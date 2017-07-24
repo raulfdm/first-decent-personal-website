@@ -49,10 +49,10 @@ const MANIFEST_CONFIG = {
 gulp.task('build', ['clean'], callback => {
 	PRODUCTION ?
 		sequence(
-			['css', 'js', 'image'], ['copy-files', 'revision'],
+			['css', 'ts', 'image'], ['copy-files', 'revision'],
 			'pug')(callback) :
 		sequence(
-			['css', 'js', 'image'], ['copy-files'],
+			['css', 'ts', 'image'], ['copy-files'],
 			'pug')(callback)
 })
 
@@ -63,9 +63,6 @@ gulp.task('clean', () => {
 
 gulp.task('copy-files', () => {
 	gulp.src('src/CNAME')
-		.pipe(gulp.dest(DEST_FOLDER))
-
-	gulp.src('src/ts/vendor/require.min.js')
 		.pipe(gulp.dest(DEST_FOLDER))
 })
 
@@ -94,19 +91,6 @@ gulp.task('image', () => {
 			})
 		]))
 		.pipe(gulp.dest(DEST_FOLDER + 'img/'))
-})
-
-gulp.task('js', () => {
-
-	return gulp.src(['./src/js/vendor/smooths-scroll.min.js',
-			'./src/js/vendor/email.min.js',
-			'./src/js/index.js',
-			'./src/js/contact-form.js'
-		])
-		.pipe(babel())
-		.pipe(jsmin())
-		.pipe(concat('index.min.js'))
-		.pipe(gulp.dest(DEST_FOLDER))
 })
 
 gulp.task('pages', () => {

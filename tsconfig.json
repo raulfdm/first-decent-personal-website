@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"outDir": "dist/",
+		"noEmitOnError": true,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"lib": [
+			"es2015",
+			"dom"
+		]
+	},
+	"include": [
+		"src/ts/**/*"
+	],
+	"exclude": [
+		"src/ts/vendor/**/*"
+	]
+}

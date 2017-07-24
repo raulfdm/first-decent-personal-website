@@ -1,12 +1,5 @@
-export default class UrlController{
-	private _window: JQuery<Element>
-	constructor(){
-		this._window = $('window')
-
-		this._window.on('hashchange',this.handleURL)
-	}
-
-	handleURL():void{
-		history.replaceState({}, null, '/')
-	}
-}
+export default (() => {
+	console.log('notWorking')
+	const _window: JQuery<Element> = $('window')
+	_window.on('hashchange', () => history.replaceState({}, null, '/'))
+})()

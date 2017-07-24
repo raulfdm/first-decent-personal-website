@@ -1,6 +1,7 @@
 import Contact from '../models/Contact'
 import { disable, enable } from '../helpers/disableEnableElements'
 import ErrorFormController from './ErrorFormController'
+import ReCaptchaService from '../services/ReCaptchaService'
 
 export default class ContactController {
 	private _inputName: JQuery<Element>
@@ -8,6 +9,7 @@ export default class ContactController {
 	private _inputMessage: JQuery<Element>
 	private _inputMailFrom: JQuery<Element>
 	private _errorController: ErrorFormController = new ErrorFormController()
+	private _reCaptcha: ReCaptchaService = new ReCaptchaService(this.envia)
 
 	constructor() {
 		this._inputName = $('.js-form__name')
@@ -54,9 +56,14 @@ export default class ContactController {
 			this._errorController.failure(error)
 		else {
 			this._errorController.cleanClass()
-			console.log(this.getData())
+			this._reCaptcha.render()
+			this._reCaptcha.execute()
 		}
 
+	}
+
+	envia() {
+		console.log('oi')
 	}
 
 	validateForm(): string {
@@ -73,5 +80,9 @@ export default class ContactController {
 			errorMessage = "Message is Required!"
 
 		return errorMessage
+	}
+
+	insertButton() {
+
 	}
 }

@@ -17,6 +17,27 @@ const revision = require('gulp-rev')
 const revisionDelete = require('gulp-rev-delete-original')
 const sequence = require('gulp-sequence')
 
+//TESTES TYPESCRIPT
+const browserify = require('browserify')
+const source = require('vinyl-source-stream')
+const tsify = require("tsify")
+
+gulp.task('ts', () => {
+	return browserify({
+			basedir: '.',
+			debug: true,
+			entries: ['src/ts/index.ts'],
+			cache: {},
+			packageCache: {}
+		})
+		.plugin(tsify)
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest("dist"));
+})
+
+// END TESTES TYPESCRIPT
+
 const DEST_FOLDER = 'dist/'
 const PRODUCTION = process.env.PROD
 const MANIFEST_CONFIG = {
@@ -41,7 +62,10 @@ gulp.task('clean', () => {
 })
 
 gulp.task('copy-files', () => {
-	return gulp.src('src/CNAME')
+	gulp.src('src/CNAME')
+		.pipe(gulp.dest(DEST_FOLDER))
+
+	gulp.src('src/ts/vendor/require.min.js')
 		.pipe(gulp.dest(DEST_FOLDER))
 })
 
@@ -121,5 +145,5 @@ gulp.task('revision', () => {
 gulp.task('watch', () => {
 	gulp.watch('src/**/*.pug', ['pug'])
 	gulp.watch('src/**/*.css', ['css'])
-	gulp.watch('src/**/*.js', ['js'])
+	gulp.watch('src/**/*.ts', ['ts'])
 })

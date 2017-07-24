@@ -7,13 +7,16 @@
     "deploy": "PROD=true yarn build && yarn gulp pages",
     "build": "yarn gulp build",
     "start": "yarn lite-server",
-    "watch": "yarn gulp watch"
+    "watch": "yarn gulp watch",
+    "compile": "tsc"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^8.0.15",
     "autoprefixer": "^7.1.1",
     "babel-preset-env": "^1.5.2",
+    "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
@@ -30,9 +33,15 @@
     "gulp-rev-delete-original": "^0.2.3",
     "gulp-sequence": "^0.4.6",
     "lite-server": "^2.3.0",
-    "postcss-import": "^10.0.0"
+    "postcss-import": "^10.0.0",
+    "tsify": "^3.0.1",
+    "typescript": "^2.4.2",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "@types/jquery": "^3.2.9",
+    "@types/systemjs": "^0.20.2",
+    "jquery": "^3.2.1",
     "merge-json": "^0.1.0-b.3"
   }
 }

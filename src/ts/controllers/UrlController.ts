@@ -1,5 +1,5 @@
-export default (() => {
-	console.log('notWorking')
-	const _window: JQuery<Element> = $('window')
-	_window.on('hashchange', () => history.replaceState({}, null, '/'))
-})()
+export default (window: Window) => {
+	const replaceURL = () => history.replaceState({}, null, '/')
+
+	window.onhashchange = replaceURL
+}

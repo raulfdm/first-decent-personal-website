@@ -64,6 +64,9 @@ gulp.task('clean', () => {
 gulp.task('copy-files', () => {
 	gulp.src('src/CNAME')
 		.pipe(gulp.dest(DEST_FOLDER))
+
+	gulp.src('src/google-site-verification: google13191576035e3ffb.html')
+		.pipe(gulp.dest(DEST_FOLDER))
 })
 
 gulp.task('css', () => {

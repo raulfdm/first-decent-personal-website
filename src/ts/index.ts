@@ -11,7 +11,7 @@ $(document).ready(function () {
 	const header = new HeaderController()
 	const scroll = new ScrollController()
 
-	header.click(scroll.hide.bind(scroll))
+	header.clickAction = scroll.hide.bind(scroll)
 
 
 	$('.contact__form').on('submit', contactForm.submit.bind(contactForm))

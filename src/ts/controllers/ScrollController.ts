@@ -36,7 +36,7 @@ export default class ScrollController {
 			this.transparencyOn() :
 			this.transparencyOff()
 
-		actualScrollPosition < this._scrollPosition ?
+		actualScrollPosition < this._scrollPosition || actualScrollPosition === 0 ?
 			this.show() :
 			this.hide()
 

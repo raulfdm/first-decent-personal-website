@@ -9,10 +9,9 @@
 	transition: all .4s ease-in-out;
 }
 
-.header.hidden{
+.header.hidden {
 	transform: translateY(-100%);
 }
-
 
 .header__logo {
 	--font-size-title: 2.5rem;
@@ -22,6 +21,8 @@
 	text-align: center;
 	font-family: 'Megrim', cursive;
 	margin-right: 1rem;
+	color: inherit;
+	text-decoration: none;
 }
 
 .header__menu {
@@ -29,7 +30,6 @@
 }
 
 .header__menu__list {
-	font-size: 1.3rem;
 	letter-spacing: 2px;
 	text-align: center;
 }
@@ -41,6 +41,7 @@
 .header__menu__list__item__link {
 	display: inline-block;
 	padding: 1rem;
+	font-size: 1.2rem;
 	font-family: 'Nixie One';
 	text-decoration: none;
 	color: inherit;
@@ -48,12 +49,32 @@
 	text-transform: uppercase;
 }
 
+@media screen and (max-width: 440px) {
+	.header__menu__list__item__link {
+		font-size: .65rem;
+	}
+}
+@media screen and (min-width: 441px) and (max-width: 720px) {
+	.header__menu__list__item__link {
+		font-size: .8rem;
+	}
+}
+@media screen and (max: 721px) {
+	.header__menu__list__item__link {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (max: 721px) {
+
+}
+
+
 .header__menu__list__item__link:hover {
 	color: var(--primary-color);
 	background-color: var(--secondary-color);
 }
 
-@media screen and (max-width: 1042px) {
+@media screen and (max-width: 1116px) {
 	.header .container {
 		width: 100%;
 	}
@@ -74,7 +95,6 @@
 	}
 	.header__menu__list__item {
 		flex-grow: 1;
-		font-size: .7rem;
 	}
 	.header__menu__list__item__link {
 		width: 100%;

@@ -56,6 +56,9 @@ block body-content
 block script-content
 	script
 		include ts/vendor/analytics.js
-	script(src='bundle.js')
+	if assets
+		script(src=assets['bundle.js'])
+	else
+		script(src='bundle.js')
 
 	script(src='https://www.google.com/recaptcha/api.js' async defer)

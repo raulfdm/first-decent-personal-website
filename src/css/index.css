@@ -13,9 +13,12 @@
 @import './module/_home.css';
 @import './module/_portfolio.css';
 @import './module/_skills.css';
+@import './module/_contact.css';
 @import './module/_social.css';
 
 /*State*/
 @import './state/_transparency.css';
+@import './state/_disable.css';
+@import './state/_feedback-state.css';
 
 /*Theme*/

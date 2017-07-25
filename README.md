@@ -5,6 +5,7 @@
 ## Stack
 
 - Task Runner: [Gulp](http://gulpjs.com/)
+- Superset JavaScript: [TypeScript](https://www.typescriptlang.org)
 - CSS 
 	- Tooling: [PostCSS](http://postcss.org/)
 	- Methodologies
@@ -37,11 +38,14 @@
 |   |   |   |     ├── _card-header.css
 |   |   |   |     └── _card.css
 |   |   |   ├── _about.css
+|   |   |   ├── _contact.css
 |   |   |   ├── _home.css
 |   |   |   ├── _portfolio.css
 |   |   |   ├── _skills.css
 |   |   |   └── _social.css
 |   |   ├── state/
+|   |   |   ├── _disable.css
+|   |   |   ├── _feedback-state.css
 |   |   |   └── _transparency.css
 |   |   ├── theme/
 |   |   └── index.css
@@ -57,19 +61,38 @@
 |   |   └── background.jpg
 |   ├── includes/
 |   |   ├── _about.pug
+|   |   ├── _contact.pug
 |   |   ├── _footer.pug
 |   |   ├── _header.pug
 |   |   ├── _home.pug
 |   |   ├── _portfolio.pug
 |   |   ├── _skills.pug
 |   |   └── _social.pug
-|   ├── js/
+|   ├── ts/
+|   |   ├── controllers/
+|   |   |   ├── ContactController.ts
+|   |   |   ├── ErrorFormController.ts
+|   |   |   ├── HeaderController.ts
+|   |   |   ├── SubmitButtonController.ts
+|   |   |   └── UrlController.ts
+|   |   ├── helpers/
+|   |   |   ├── addAndRemoveClass.ts
+|   |   |   └── disableEnableElements.ts
+|   |   ├── models/
+|   |   |   └── Contact.ts
+|   |   ├── services/
+|   |   |   ├── MailService.ts
+|   |   |   └── ReCaptchaService.ts
 |   |   ├── vendor/
-|   |   |   └── smooths-scroll.min.pug
-|   |   ├── index.js
-|   |   └── analytics.pug
+|   |   |   ├── analytics.js
+|   |   |   ├── bootConfig.js
+|   |   |   ├── email.min.js
+|   |   |   ├── smooths-scroll.min.js
+|   |   |   └── smtpjs.min.js
+|   |   └── index.ts
 |   ├── layouts/
 |   |   └── default.pug
+|   ├── google-site-verification: google13191576035e3ffb.html
 |   ├── CNAME
 |   └── index.pug
 ├── .babelrc

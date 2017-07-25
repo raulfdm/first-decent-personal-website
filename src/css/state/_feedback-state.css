@@ -1,0 +1,11 @@
+.is-failure{
+	color: var(--error-color);
+}
+.is-success{
+	color: var(--success-color);
+}
+
+.is-failure,.is-success{
+	display: block;
+	font-weight: bold;
+}

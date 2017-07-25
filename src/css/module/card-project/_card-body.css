@@ -3,10 +3,3 @@
 	border-bottom: 1px solid #eee;
 	height: 5.625rem;
 }
-
-@media screen and (max-width:891px){
-	.portfolio__card__body{
-		min-height: 4.625rem;
-	}
-}
-

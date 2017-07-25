@@ -29,6 +29,11 @@ p {
 	line-height: 1.3rem;
 }
 
+::selection{
+	background: var(--primary-color);
+	color: var(--secondary-color);
+}
+
 .main__section {
 	padding: 4rem 2rem;
 }
@@ -46,14 +51,15 @@ p {
 
 @media screen and (max-width: 960px){
 	.container{
-		width: 90%;
+		width: 98%;
 	}
 }
 
 .section-title {
 	font-size: 2.5rem;
-	margin: 0 0 1rem 0;
+	margin: 0 0 2rem 0;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 @media screen and (max-width: 776px) {

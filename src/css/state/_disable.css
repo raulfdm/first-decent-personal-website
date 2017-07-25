@@ -1,0 +1,6 @@
+.is-disabled,
+.is-disabled[disabled] {
+	box-shadow: none;
+	opacity: 0.5;
+	cursor: not-allowed;
+}

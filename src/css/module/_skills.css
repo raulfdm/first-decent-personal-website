@@ -25,7 +25,7 @@
 
 .skills_group__skill-list__item {
 	display: inline-block;
-	margin-right: .3125rem;
+	margin: .3125rem;
 }
 
 .skills_group__skill-list__item::before {

@@ -6,7 +6,6 @@ const cssnano = require('gulp-cssnano')
 const data = require('gulp-data')
 const ghPages = require('gulp-gh-pages')
 const gulp = require('gulp')
-const hash = require('gulp-rev')
 const imagemin = require('gulp-imagemin')
 const jsmin = require('gulp-jsmin')
 const mergeJson = require('merge-json')
@@ -14,15 +13,48 @@ const postcss = require('gulp-postcss')
 const postImport = require('postcss-import')
 const pug = require('gulp-pug')
 const rename = require('gulp-rename')
+const revision = require('gulp-rev')
+const revisionDelete = require('gulp-rev-delete-original')
 const sequence = require('gulp-sequence')
 
+//TESTES TYPESCRIPT
+const browserify = require('browserify')
+const source = require('vinyl-source-stream')
+const tsify = require("tsify")
+
+gulp.task('ts', () => {
+	return browserify({
+			basedir: '.',
+			debug: true,
+			entries: ['src/ts/index.ts'],
+			cache: {},
+			packageCache: {}
+		})
+		.plugin(tsify)
+		.bundle()
+		.pipe(source('bundle.js'))
+		.pipe(gulp.dest("dist"));
+})
+
+// END TESTES TYPESCRIPT
+
 const DEST_FOLDER = 'dist/'
+const PRODUCTION = process.env.PROD
 const MANIFEST_CONFIG = {
 	merge: true,
+	manifestName: 'rev-manifest.json',
+	manifestPath: 'src/data/'
 }
 
-gulp.task('build', ['clean'], callback =>
-	sequence(['css', 'js', 'image'], ['copy-files', 'pug'])(callback))
+gulp.task('build', ['clean'], callback => {
+	PRODUCTION ?
+		sequence(
+			['css', 'ts', 'image'], ['copy-files', 'revision'],
+			'pug')(callback) :
+		sequence(
+			['css', 'ts', 'image'], ['copy-files'],
+			'pug')(callback)
+})
 
 gulp.task('clean', () => {
 	return gulp.src(DEST_FOLDER)
@@ -30,24 +62,22 @@ gulp.task('clean', () => {
 })
 
 gulp.task('copy-files', () => {
-	return gulp.src('src/CNAME')
+	gulp.src('src/CNAME')
+		.pipe(gulp.dest(DEST_FOLDER))
+
+	gulp.src('src/google-site-verification: google13191576035e3ffb.html')
 		.pipe(gulp.dest(DEST_FOLDER))
 })
 
 gulp.task('css', () => {
-	gulp.src('src/css/index.css')
+	return gulp.src('src/css/index.css')
 		.pipe(postcss([autoprefixer(), postImport()]))
 		.pipe(cssnano())
 		.pipe(rename({
 			suffix: '.min'
 		}))
-		.pipe(hash())
-		.pipe(gulp.dest(DEST_FOLDER))
-		.pipe(hash.manifest(MANIFEST_CONFIG))
 		.pipe(gulp.dest(DEST_FOLDER))
 })
-
-gulp.task('deploy', sequence('build', 'pages'))
 
 gulp.task('image', () => {
 	const CONFIG = {
@@ -66,20 +96,6 @@ gulp.task('image', () => {
 		.pipe(gulp.dest(DEST_FOLDER + 'img/'))
 })
 
-gulp.task('js', () => {
-
-	return gulp.src(['./src/js/vendor/smooths-scroll.min.js',
-			'./src/js/index.js'
-		])
-		.pipe(babel())
-		.pipe(jsmin())
-		.pipe(concat('index.min.js'))
-		.pipe(hash())
-		.pipe(gulp.dest(DEST_FOLDER))
-		.pipe(hash.manifest(MANIFEST_CONFIG))
-		.pipe(gulp.dest(DEST_FOLDER))
-})
-
 gulp.task('pages', () => {
 	return gulp.src(DEST_FOLDER + '**/*')
 		.pipe(ghPages())
@@ -88,18 +104,33 @@ gulp.task('pages', () => {
 gulp.task('pug', () => {
 	return gulp.src('src/index.pug')
 		.pipe(data(() => {
-			let result = mergeJson.merge(require('./src/data/projects.json'),
-				require('./src/data/about.json'))
-			result = mergeJson.merge(result, require('./src/data/skills.json'))
-			result.assets = require('./dist/rev-manifest.json')
+
+			const result = {
+				projects: require('./src/data/projects.json'),
+				about: require('./src/data/about.json'),
+				abilities: require('./src/data/skills.json')
+			}
+
+			if (PRODUCTION)
+				result.assets = require('./src/data/rev-manifest.json')
+
 			return result
 		}))
 		.pipe(pug({}))
 		.pipe(gulp.dest(DEST_FOLDER))
 })
 
+gulp.task('revision', () => {
+	return gulp.src('dist/**/*.+(css|js)')
+		.pipe(revision())
+		.pipe(gulp.dest('dist/'))
+		.pipe(revisionDelete())
+		.pipe(revision.manifest(MANIFEST_CONFIG))
+		.pipe(gulp.dest(MANIFEST_CONFIG.manifestPath))
+})
+
 gulp.task('watch', () => {
 	gulp.watch('src/**/*.pug', ['pug'])
 	gulp.watch('src/**/*.css', ['css'])
-	gulp.watch('src/**/*.js', ['js'])
+	gulp.watch('src/**/*.ts', ['ts'])
 })

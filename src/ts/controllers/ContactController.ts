@@ -1,7 +1,9 @@
 import Contact from '../models/Contact'
 import { disable, enable } from '../helpers/disableEnableElements'
 import ErrorFormController from './ErrorFormController'
+import SubmitButtonController from './SubmitButtonController'
 import ReCaptchaService from '../services/ReCaptchaService'
+import MailService from '../services/MailService'
 
 export default class ContactController {
 	private _inputName: JQuery<Element>
@@ -9,7 +11,7 @@ export default class ContactController {
 	private _inputMessage: JQuery<Element>
 	private _inputMailFrom: JQuery<Element>
 	private _errorController: ErrorFormController = new ErrorFormController()
-	private _reCaptcha: ReCaptchaService = new ReCaptchaService(this.envia)
+	private _button: SubmitButtonController = new SubmitButtonController()
 
 	constructor() {
 		this._inputName = $('.js-form__name')
@@ -27,18 +29,20 @@ export default class ContactController {
 		)
 	}
 
-	disableFields() {
+	disableForm() {
 		disable(this._inputName)
 		disable(this._inputSubject)
 		disable(this._inputMailFrom)
 		disable(this._inputMessage)
+		this._button.disable()
 	}
 
-	enableFields() {
+	enableForm() {
 		enable(this._inputName)
 		enable(this._inputSubject)
 		enable(this._inputMailFrom)
 		enable(this._inputMessage)
+		this._button.enable()
 	}
 
 	clearData() {
@@ -51,19 +55,30 @@ export default class ContactController {
 
 	submit(event: JQuery.Event) {
 		event.preventDefault()
+		this._errorController.cleanClass()
+
 		const error: string = this.validateForm()
-		if (error)
-			this._errorController.failure(error)
-		else {
-			this._errorController.cleanClass()
-			this._reCaptcha.render()
-			this._reCaptcha.execute()
-		}
+
+		error
+			? this._errorController.failure(error)
+			: ReCaptchaService.execute()
 
 	}
 
-	envia() {
-		console.log('oi')
+	sendSMTP() {
+		this.disableForm()
+
+		MailService.sendEmail(this.getData().prepareToSend)
+			.then((sucess: any) => {
+				this.clearData()
+				ReCaptchaService.reset()
+				this._errorController.success('Your message was sent successfuly')
+			})
+			.catch((err: any) => {
+				this._errorController.failure('Something went wrong! Please, try later')
+				console.log(err)
+			})
+			.then(() => this.enableForm())
 	}
 
 	validateForm(): string {

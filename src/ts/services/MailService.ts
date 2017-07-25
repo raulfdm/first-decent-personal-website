@@ -1,15 +1,19 @@
 import Contact from '../models/Contact'
-declare const emailJsService: any
-declare const emailjs: any
 
 export default class MailService {
-	private _userID: string = 'user_XDedmoeMTu9Eyl0FxOlTJ'
 
-	constructor(){
-		emailjs.init(this._userID)
-	}
+	static sendEmail = (data: Object): Promise<any> => {
+		return new Promise((resolve, reject) => {
+			$.ajax({
+				url: 'https://mail-raulfdm.herokuapp.com/mail',
+				method: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(data)
+			})
+				.done(response => resolve(response))
+				.fail(error => reject(error))
+		})
 
-	sendEmail = (data: Contact): Promise<any> => {
-		return (<Promise<any>>emailJsService(data))
 	}
 }

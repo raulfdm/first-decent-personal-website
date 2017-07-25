@@ -1,13 +1,15 @@
 import ContactController from './controllers/ContactController'
-import ScrollController from './controllers/ScrollController'
 import HeaderController from './controllers/HeaderController'
+import ReCaptchaService from './services/ReCaptchaService'
+import ScrollController from './controllers/ScrollController'
 import UrlHandle from './controllers/UrlController'
-import './vendor/email.min.js'
 import './vendor/smooths-scroll.min.js'
 import './vendor/bootConfig.js'
 
+const contactForm = new ContactController()
+const recaptcha = new ReCaptchaService(window, contactForm.sendSMTP.bind(contactForm))
+
 $(document).ready(function () {
-	const contactForm = new ContactController()
 	const header = new HeaderController()
 	const scroll = new ScrollController()
 

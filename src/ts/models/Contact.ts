@@ -18,4 +18,12 @@ export default class Contact {
 		return this._message
 	}
 
+	get prepareToSend(){
+		return {
+			subject: this._subject,
+			from: this._mailFrom,
+			message: this._message,
+			name: this._name
+		}
+	}
 }

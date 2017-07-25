@@ -54,6 +54,7 @@ block body-content
 		include includes/_footer.pug
 
 block script-content
+
 	script
 		include ts/vendor/analytics.js
 	if assets
@@ -61,4 +62,5 @@ block script-content
 	else
 		script(src='bundle.js')
 
-	script(src='https://www.google.com/recaptcha/api.js' async defer)
+	script(src='https://www.google.com/recaptcha/api.js?onload=renderReCaptcha&render=explicit')
+

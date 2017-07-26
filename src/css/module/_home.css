@@ -2,7 +2,8 @@
 	width: 100%;
 	height: 100vh;
 	background-image: url("img/background.jpg");
-	background-repeat: no-repeat center;
+	background-repeat: no-repeat;
+	background-position-x: 40%;
 	background-size: cover;
 	display: flex;
 	align-items: center;
@@ -16,4 +17,10 @@
 	font-family: 'Megrim', cursive;
 	color: white;
 	font-weight: bold;
+}
+
+@media screen and (max-width: 1116px) {
+	.home__title {
+		font-size: 3rem;
+	}
 }

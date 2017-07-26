@@ -1,11 +1,17 @@
 .scroll-downs {
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: 1rem;
 	left: 0;
 	margin: auto;
 	width: 2.125rem;
 	height: 3.4375rem;
+}
+
+@media screen and (max-height: 415px) {
+	.scroll-downs {
+		display: none;
+	}
 }
 
 .mousey {

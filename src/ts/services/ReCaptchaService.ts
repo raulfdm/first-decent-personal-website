@@ -1,6 +1,6 @@
 declare const grecaptcha: any
 
-export default class ReCaptchaService {
+export class ReCaptchaService {
 	private _siteKey: string = '6LfxYykUAAAAALVAFyBMLq4WD5xExENrFCk7YDam'
 	private _size: string = 'invisible'
 

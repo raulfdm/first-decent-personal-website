@@ -1,7 +1,6 @@
 import Contact from '../models/Contact'
 
-export default class MailService {
-
+export class MailService {
 	static sendEmail = (data: Object): Promise<any> => {
 		return new Promise((resolve, reject) => {
 			$.ajax({

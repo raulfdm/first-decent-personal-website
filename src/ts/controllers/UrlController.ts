@@ -1,5 +1,5 @@
-export default (window: Window) => {
-	const replaceURL = () => history.replaceState({}, null, '/')
+export const UrlController = (window: Window) => {
+  const replaceURL = () => history.replaceState({}, "", '/')
 
-	window.onhashchange = replaceURL
+  window.onhashchange = replaceURL
 }

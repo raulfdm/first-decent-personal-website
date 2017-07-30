@@ -21,6 +21,6 @@
 	},
 	{
 		"title": "Patterns and Techniques",
-		"skills": ["Method Chaning","MVC","OOP","Prototype Pattern", "SEO","Responsive First"]
+		"skills": ["BEM", "Method Chaning","MVC","OOP","Prototype Pattern", "Responsive First","SEO","SMACSS"]
 	}
 ]

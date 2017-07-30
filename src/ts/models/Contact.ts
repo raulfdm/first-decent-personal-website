@@ -1,4 +1,4 @@
-export default class Contact {
+export class Contact {
 
 	constructor(readonly name: string,
 		readonly subject: string,

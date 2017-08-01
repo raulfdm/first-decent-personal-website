@@ -1,15 +1,19 @@
 import { addClass, removeClass } from '../helpers/addAndRemoveClass'
-export default class ScrollController {
-	private _scrollPosition: number = 0
-	private _elementWindow: JQuery<Element>
+import { domInjection } from '../helpers/decoratos/index';
+
+export class ScrollController {
+
+  @domInjection(window)
+  private _elementWindow: JQuery<Element>
+
+  @domInjection('.header')
 	private _elementHeader: JQuery<Element>
-	private _classTransparent: string = 'is-transparent'
+
+	private _scrollPosition: number = 0
+  private _classTransparent: string = 'is-transparent'
 	private _classHidden: string = 'hidden'
 
 	constructor() {
-		this._elementWindow = $(window)
-		this._elementHeader = $('.header')
-
 		this._elementWindow.scroll(this.handleScroll)
 	}
 
@@ -30,7 +34,7 @@ export default class ScrollController {
 	}
 
 	handleScroll = () => {
-		const actualScrollPosition = this._elementWindow.scrollTop()
+		const actualScrollPosition = this._elementWindow.scrollTop() || 0
 
 		actualScrollPosition === 0 ?
 			this.transparencyOn() :

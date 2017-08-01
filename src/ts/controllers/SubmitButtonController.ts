@@ -1,20 +1,19 @@
 import { disable, enable } from '../helpers/disableEnableElements'
+import { domInjection } from "../helpers/decoratos/index";
 
-export default class SubmitButtonController {
-	private _inputSubmitButton: JQuery<Element>
+export class SubmitButtonController {
 
-	constructor() {
-		this._inputSubmitButton = $('.js-form__submit')
-	}
+  @domInjection('.js-form__submit')
+  private _inputSubmitButton: JQuery<Element>
 
-	click(action: Function): void {
-		this._inputSubmitButton.on('click', <JQuery.EventStatic>action)
-	}
+  click(action: Function): void {
+    this._inputSubmitButton.on('click', <JQuery.EventStatic>action)
+  }
 
-	disable(): void {
-		disable(this._inputSubmitButton)
-	}
-	enable(): void {
-		enable(this._inputSubmitButton)
-	}
+  disable(): void {
+    disable(this._inputSubmitButton)
+  }
+  enable(): void {
+    enable(this._inputSubmitButton)
+  }
 }

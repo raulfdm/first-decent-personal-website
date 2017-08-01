@@ -1,10 +1,11 @@
-export default class HeaderController {
-	private _elementMenuItems: JQuery<Element>
-	private _clickAction: Function
+import { domInjection } from '../helpers/decoratos/index'
 
-	constructor() {
-		this._elementMenuItems = $('.header__menu__list__item__link')
-	}
+export class HeaderController {
+
+  @domInjection('.header__menu__list__item__link')
+  private _elementMenuItems: JQuery<Element>
+
+  private _clickAction: Function
 
 	private _click(): void {
 		this._elementMenuItems.click(()=>{

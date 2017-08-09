@@ -51,6 +51,7 @@
 |   |   └── index.css
 |   ├── data/
 |   |   ├── about.json
+|   |   ├── json-ld.json
 |   |   ├── projects.json
 |   |   └── skills.json
 |   ├── img/
@@ -105,4 +106,4 @@
 ```
 
 ## License
-[MIT License](https://github.com/raulfdm/personal-website/blob/master/LICENSE) © [Raul F. de Melo](http://rauldemelo.com.br)
+[MIT License](https://github.com/raulfdm/personal-website/blob/master/LICENSE) © [Raul de Melo](http://rauldemelo.com.br)

@@ -1,7 +1,7 @@
 import { Contact } from '../models/index'
 
 export class MailService {
-  static sendEmail = (data: Contact): Promise<any> => {
+  static sendEmail = (data: Object): Promise<any> => {
     return new Promise((resolve, reject) => {
       $.ajax({
         url: 'https://mail-raulfdm.herokuapp.com/mail',

@@ -39,19 +39,19 @@ block css-content
   if assets
     link(rel="stylesheet", href=assets['index.min.css'])
   else
-    link(rel="stylesheet", href='index.min.css')
+    link(rel="stylesheet", href='index.css')
 
 block body-content
   div#top
   include includes/_header.pug
 
   main.main
-  include includes/_home.pug
-  include includes/_about.pug
-  include includes/_skills.pug
-  include includes/_portfolio.pug
-  include includes/_contact.pug
-  include includes/_social.pug
+    include includes/_home.pug
+    include includes/_about.pug
+    include includes/_skills.pug
+    include includes/_portfolio.pug
+    include includes/_contact.pug
+    include includes/_social.pug
 
   include includes/_footer.pug
 

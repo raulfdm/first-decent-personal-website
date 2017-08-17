@@ -1,8 +1,9 @@
 const gulp = require('gulp')
 const glob = require('glob')
+const path = require('path')
 
 const options = {
-  destPath: 'dist/',
+  destPath: path.join(__dirname, 'dist/'),
   production: Boolean(process.env.PROD) || false,
   manifestConfig: {
     merge: true,

@@ -14,13 +14,23 @@
 - HTML Template Engine: [PUG](https://pugjs.org/api/getting-started.html)
 - Live Reload Server: [Lite Server](https://github.com/johnpapa/lite-server)
 
-
 ## Folder Structure
 ```
 .
 ├── README.md
 ├── LICENSE
 ├── dist/
+├── gulpTasks/
+|   ├── build.js
+|   ├── clean.js
+|   ├── copy-files.js
+|   ├── image.js
+|   ├── pages.js
+|   ├── pug.js
+|   ├── revision.js
+|   ├── styles.js
+|   ├── typescript.js
+|   └── watchers.js
 ├── src/
 |   ├── css/
 |   |   ├── base/
@@ -50,10 +60,8 @@
 |   |   ├── theme/
 |   |   └── index.css
 |   ├── data/
-|   |   ├── about.json
 |   |   ├── json-ld.json
-|   |   ├── projects.json
-|   |   └── skills.json
+|   |   └── rev-manifest.json
 |   ├── img/
 |   |   ├── png/
 |   |   |   ├── favicon-16x16.png

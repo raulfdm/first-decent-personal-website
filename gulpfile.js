@@ -1,136 +1,17 @@
-const autoprefixer = require('autoprefixer')
-const babel = require('gulp-babel')
-const clean = require('gulp-clean')
-const concat = require('gulp-concat')
-const cssnano = require('gulp-cssnano')
-const data = require('gulp-data')
-const ghPages = require('gulp-gh-pages')
 const gulp = require('gulp')
-const imagemin = require('gulp-imagemin')
-const jsmin = require('gulp-jsmin')
-const mergeJson = require('merge-json')
-const postcss = require('gulp-postcss')
-const postImport = require('postcss-import')
-const pug = require('gulp-pug')
-const rename = require('gulp-rename')
-const revision = require('gulp-rev')
-const revisionDelete = require('gulp-rev-delete-original')
-const sequence = require('gulp-sequence')
+const glob = require('glob')
+const path = require('path')
 
-//TESTES TYPESCRIPT
-const browserify = require('browserify')
-const source = require('vinyl-source-stream')
-const tsify = require("tsify")
-
-gulp.task('ts', () => {
-	return browserify({
-			basedir: '.',
-			debug: true,
-			entries: ['src/ts/index.ts'],
-			cache: {},
-			packageCache: {}
-		})
-		.plugin(tsify)
-		.bundle()
-		.pipe(source('bundle.js'))
-		.pipe(gulp.dest("dist"));
-})
-
-// END TESTES TYPESCRIPT
-
-const DEST_FOLDER = 'dist/'
-const PRODUCTION = process.env.PROD
-const MANIFEST_CONFIG = {
-	merge: true,
-	manifestName: 'rev-manifest.json',
-	manifestPath: 'src/data/'
+const options = {
+  destPath: path.join(__dirname, 'dist/'),
+  production: Boolean(process.env.PROD) || false,
+  manifestConfig: {
+    merge: true,
+    manifestName: 'rev-manifest.json',
+    manifestPath: 'src/data/',
+  },
 }
 
-gulp.task('build', ['clean'], callback => {
-	PRODUCTION ?
-		sequence(
-			['css', 'ts', 'image'], ['copy-files', 'revision'],
-			'pug')(callback) :
-		sequence(
-			['css', 'ts', 'image'], ['copy-files'],
-			'pug')(callback)
-})
-
-gulp.task('clean', () => {
-	return gulp.src(DEST_FOLDER)
-		.pipe(clean())
-})
-
-gulp.task('copy-files', () => {
-	gulp.src('src/CNAME')
-		.pipe(gulp.dest(DEST_FOLDER))
-
-	gulp.src('src/google-site-verification: google13191576035e3ffb.html')
-		.pipe(gulp.dest(DEST_FOLDER))
-})
-
-gulp.task('css', () => {
-	return gulp.src('src/css/index.css')
-		.pipe(postcss([autoprefixer(), postImport()]))
-		.pipe(cssnano())
-		.pipe(rename({
-			suffix: '.min'
-		}))
-		.pipe(gulp.dest(DEST_FOLDER))
-})
-
-gulp.task('image', () => {
-	const CONFIG = {
-		progressive: true
-	}
-
-	return gulp.src('src/img/**/*')
-		.pipe(imagemin([
-			imagemin.jpegtran({
-				progressive: true
-			}),
-			imagemin.optipng({
-				optimizationLevel: 5
-			})
-		]))
-		.pipe(gulp.dest(DEST_FOLDER + 'img/'))
-})
-
-gulp.task('pages', () => {
-	return gulp.src(DEST_FOLDER + '**/*')
-		.pipe(ghPages())
-})
-
-gulp.task('pug', () => {
-	return gulp.src('src/index.pug')
-		.pipe(data(() => {
-
-			const result = {
-				projects: require('./src/data/projects.json'),
-				about: require('./src/data/about.json'),
-				abilities: require('./src/data/skills.json')
-			}
-
-			if (PRODUCTION)
-				result.assets = require('./src/data/rev-manifest.json')
-
-			return result
-		}))
-		.pipe(pug({}))
-		.pipe(gulp.dest(DEST_FOLDER))
-})
-
-gulp.task('revision', () => {
-	return gulp.src('dist/**/*.+(css|js)')
-		.pipe(revision())
-		.pipe(gulp.dest('dist/'))
-		.pipe(revisionDelete())
-		.pipe(revision.manifest(MANIFEST_CONFIG))
-		.pipe(gulp.dest(MANIFEST_CONFIG.manifestPath))
-})
-
-gulp.task('watch', () => {
-	gulp.watch('src/**/*.pug', ['pug'])
-	gulp.watch('src/**/*.css', ['css'])
-	gulp.watch('src/**/*.ts', ['ts'])
-})
+glob
+  .sync('./gulpTasks/**/*.js', { realpath: true })
+  .map(file => require(file)(options))

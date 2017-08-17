@@ -1,4 +1,4 @@
-import Contact from '../models/Contact'
+import { Contact } from '../models/index'
 import { disable, enable } from '../helpers/index'
 import { ErrorFormController, SubmitButtonController, } from './index'
 import { MailService, ReCaptchaService } from '../services/index'

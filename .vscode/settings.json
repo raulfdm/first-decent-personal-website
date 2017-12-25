@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+  "prettier.eslintIntegration": true,
+  "flow.useNPMPackagedFlow": true,
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}

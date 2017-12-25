@@ -1,6 +1,0 @@
-{
-  "@context": "http://json-ld.org/contexts/person.jsonld",
-  "@type": "Person",
-  "name": "Raul de Melo",
-  "homepage": "https://rauldemelo.com.br/"
-}

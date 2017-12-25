@@ -1,11 +1,16 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
-import Button from './index'
+import '../../settings/variables.scss';
+import Button from './index';
 
-const stories = storiesOf('Button', module)
+const stories = storiesOf('Button', module);
 
-stories.add('with text', () => <Button>Hello Button</Button>)
-
-stories.add('with Click event', () => <Button onClick={action('Clicked')}>Hello Button</Button>)
+stories.add('with text', () => <Button>Hello Button</Button>);
+stories.add('with Click event', () => <Button onClick={action('Clicked')}>Hello Button</Button>);
+stories.add('Custom style', () => (
+  <Button styles={{ backgroundColor: '#1abc9c' }} onClick={action('Clicked')}>
+    Hello Button
+  </Button>
+));

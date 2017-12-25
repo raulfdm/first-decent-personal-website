@@ -1,0 +1,23 @@
+@import '../../settings/variables.scss';
+
+.Button{
+	padding: .8rem;
+	border: none;
+	font-size: .8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+	background-color: $contrast-color;
+	color: $secondary-color;
+}
+.Button:hover{
+  background-color: #fff;
+  border: 1px solid $contrast-color;
+	color: $contrast-color;
+}
+.Button:focus{
+  outline: none;
+}
+.Button .fa{
+	margin-left: .3125rem;
+}

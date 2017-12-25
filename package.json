@@ -23,19 +23,25 @@
     "f:start": "flow start",
     "f:check": "flow",
     "f:stop": "flow stop",
-    "test": "jest",
-    "test:tdd": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "test": "cross-env NODE_ENV=test jest",
+    "test:tdd": "cross-env NODE_ENV=test jest --watch",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
+    "storybook": "cross-env NODE_ENV=test start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
+    "babel-jest": "^22.0.4",
+    "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
+    "raf": "^3.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "regenerator-runtime": "^0.11.1",
     "reset-css": "^2.2.1"
   },
   "devDependencies": {
     "@storybook/react": "^3.2.17",
+    "@types/enzyme": "^3.1.6",
+    "@types/jest": "^21.1.9",
     "@types/webpack": "^3.8.1",
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
@@ -48,7 +54,8 @@
     "clean-webpack-plugin": "^0.1.17",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
-    "cssnano": "^3.10.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^1.9.0",
@@ -61,19 +68,23 @@
     "flow-bin": "^0.61.0",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
+    "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
-    "postcss-cssnext": "^3.0.2",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0",
-    "postcss-loader": "^2.0.9",
-    "postcss-simple-vars": "^4.1.0",
     "prettier-eslint": "^8.6.0",
     "resolve-url-loader": "^2.2.1",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.2",
     "webpack-hot-middleware": "^2.21.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/settings/config/setupTests.js",
+    "moduleNameMapper": {
+      "^.+\\.s?css$": "identity-obj-proxy"
+    }
   }
 }

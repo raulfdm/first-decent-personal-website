@@ -1,8 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
-const HtmlPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -47,15 +47,12 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: [
           'style-loader',
           { loader: 'css-loader', options: { sourceMaps: true } },
           {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-            },
+            loader: 'sass-loader',
           },
         ],
       },
@@ -106,4 +103,4 @@ module.exports = {
       settings: path.resolve(__dirname, 'src', 'settings'),
     },
   },
-}
+};

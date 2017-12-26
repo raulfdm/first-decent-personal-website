@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Megrim|Nixie+One|Raleway|Fredericka+the+Great');
+@import 'reset-css/_reset.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+[data-js='root'] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}

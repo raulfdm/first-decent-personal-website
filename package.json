@@ -42,6 +42,7 @@
     "@storybook/react": "^3.2.17",
     "@types/enzyme": "^3.1.6",
     "@types/jest": "^21.1.9",
+    "@types/storybook__react": "^3.0.5",
     "@types/webpack": "^3.8.1",
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",

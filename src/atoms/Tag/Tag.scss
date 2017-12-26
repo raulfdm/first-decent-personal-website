@@ -1,0 +1,11 @@
+@import '../../settings/variables.scss';
+
+.Tag {
+  background-color: $contrast2-color;
+  font-family: 'Raleway', sans-serif;
+	color: #fff;
+	font-size: .8rem;
+	padding: .3rem;
+	display: inline-block;
+  cursor: default;
+}
